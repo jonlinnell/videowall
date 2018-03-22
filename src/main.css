@@ -1,0 +1,48 @@
+html, body {
+  padding: none;
+  margin: none;
+}
+
+body {
+  height: 3240px;
+  width: 7680px;
+  background-color: #361163;
+}
+
+body div {
+  outline: 1px solid #fff;
+}
+
+div#scr3x3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5760px;
+  height: 3240px;
+}
+
+div#scr4_1 {
+  position: absolute;
+  top: 0;
+  left: 5760px;
+  width: 1920px;
+  height: 1080px;
+}
+
+div#scr4_2 {
+  position: absolute;
+  top: 1080px;
+  left: 5760px;
+  width: 1920px;
+  height: 1080px;
+}
+div#scr4_3 {
+  position: absolute;
+  top: 2160px;
+  left: 5760px;
+  width: 1920px;
+  height: 1080px;
+}
+
+
+

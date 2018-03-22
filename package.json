@@ -1,0 +1,56 @@
+{
+  "name": "videowall",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "NODE_ENV=production ./node_modules/.bin/webpack --config config/webpack.prod.config.js",
+    "lint": "./node_modules/.bin/eslint --ext '.js','.jsx' src/",
+    "precommit": "yarn test",
+    "start": "./node_modules/.bin/webpack-dev-server --open --config config/webpack.dev.config.js",
+    "test": "yarn lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lulondon/videowall.git"
+  },
+  "author": "LU London",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/lulondon/videowall/issues"
+  },
+  "homepage": "https://github.com/lulondon/videowall#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "css-loader": "^0.28.11",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-react-app": "^2.1.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.11",
+    "html-webpack-plugin": "^3.0.7",
+    "husky": "^0.14.3",
+    "style-loader": "^0.20.3",
+    "uglifyjs-webpack-plugin": "^1.2.4",
+    "url-loader": "^1.0.1",
+    "webpack": "3",
+    "webpack-dev-server": "2",
+    "webpack-merge": "^4.1.2"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bootstrap": "^4.0.0",
+    "jquery": "^3.3.1",
+    "lodash": "^4.17.5",
+    "popper.js": "^1.14.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  }
+}
