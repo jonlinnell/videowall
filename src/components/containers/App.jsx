@@ -1,13 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 import App from '../ui/App'
 
-class AppContainer extends Component {
-  render() {
-    return (
-      <App />
-    )
-  }
-}
+const AppContainer = () => <App />
 
 export default AppContainer

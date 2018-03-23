@@ -11,7 +11,8 @@
     "import/no-named-default": "off",
     "import/no-unresolved": "off",
     "import/extensions": "off",
-    "jsx-a11y/no-onchange": off,
+    "jsx-a11y/no-onchange": off,,
+    "jsx-a11y/href-no-hash": off,
     "no-else-return": "off",
     "semi": [2, "never"]
   }
