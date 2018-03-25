@@ -1,7 +1,5 @@
 @import '~bootstrap/scss/bootstrap.scss';
 
-@import '~bootstrap/scss/bootstrap.scss';
-
 @font-face{
     font-family: 'DIN Round Pro Thin';
     src: url('../fonts/DINRoundPro-Thin.woff') format('woff'),
@@ -19,10 +17,6 @@ body {
   color: white;
   height: 3240px;
   width: 7680px;
-}
-
-body div {
-  outline: 1px solid #fff;
 }
 
 div#scr3x3 {

@@ -60,3 +60,9 @@ typings/
 # dotenv environment variables file
 .env
 
+# Module configurations
+config.json
+
+# Module files – prefer per instance integration
+news
+travel
