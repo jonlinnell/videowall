@@ -19,6 +19,10 @@ body {
   width: 7680px;
 }
 
+div.screen {
+  outline: 1px solid white; /* DEBUGGING */
+}
+
 div#scr3x3 {
   position: absolute;
   top: 0;
@@ -49,3 +53,6 @@ div#scr4_3 {
   width: 1920px;
   height: 1080px;
 }
+@import './travel/travel.scss';
+@import './news/NewsBoard.scss';
+@import './news/NewsItem.scss';
