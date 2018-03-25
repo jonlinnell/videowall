@@ -24,12 +24,16 @@ module.exports = {
         loader: 'babel-loader'
       },
       {
-        test: /\.css$/,
-        use: extractTextPlugin.extract({
-          fallback: "style-loader",
-          use: "css-loader"
-        })
+        test: /\.s?css$/,
+        loader: ['style-loader', 'css-loader', 'sass-loader']
       },
+      // {
+      //   test: /\.css$/,
+      //   use: extractTextPlugin.extract({
+      //     fallback: "style-loader",
+      //     use: "css-loader"
+      //   })
+      // },
       {
         test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         use: 'url-loader?limit=10000,outputPath=fonts/',

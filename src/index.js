@@ -1,10 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 
-import 'bootstrap'
-import 'bootstrap/dist/css/bootstrap.min.css'
-
-import './main.css'
+import './styles/main.scss'
 
 import App from './components/containers/App'
 

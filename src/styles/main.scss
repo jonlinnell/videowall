@@ -1,12 +1,24 @@
+@import '~bootstrap/scss/bootstrap.scss';
+
+@import '~bootstrap/scss/bootstrap.scss';
+
+@font-face{
+    font-family: 'DIN Round Pro Thin';
+    src: url('../fonts/DINRoundPro-Thin.woff') format('woff'),
+         url('../fonts/DINRoundPro-Thin.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
 html, body {
-  padding: none;
-  margin: none;
+  margin: 0;
+  padding: 0;
 }
 
 body {
+  font-family: 'DIN Round Pro Thin' !important;
+  background-color: #361163;
+  color: white;
   height: 3240px;
   width: 7680px;
-  background-color: #361163;
 }
 
 body div {
@@ -43,6 +55,3 @@ div#scr4_3 {
   width: 1920px;
   height: 1080px;
 }
-
-
-
