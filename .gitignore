@@ -63,6 +63,9 @@ typings/
 # Module configurations
 config.json
 
+# Webpack builds
+dist
+
 # Module files – prefer per instance integration
 news
 travel
