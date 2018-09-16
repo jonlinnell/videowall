@@ -23,6 +23,24 @@ div.screen {
   outline: 1px solid white; /* DEBUGGING */
 }
 
+div.section_header {
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  font-family: "DIN Round Pro Thin";
+  font-size: 8rem;
+}
+
+div.section_header::after {
+  height: 100%;
+  margin: 0 12px;
+  border-left: 3px solid white;
+}
+
+div.screen_1080 {
+  width: 1920px;
+  height: 1080px;
+}
+
 div#scr3x3 {
   position: absolute;
   top: 0;
@@ -35,23 +53,17 @@ div#scr4_1 {
   position: absolute;
   top: 0;
   left: 5760px;
-  width: 1920px;
-  height: 1080px;
 }
 
 div#scr4_2 {
   position: absolute;
   top: 1080px;
   left: 5760px;
-  width: 1920px;
-  height: 1080px;
 }
 div#scr4_3 {
   position: absolute;
   top: 2160px;
   left: 5760px;
-  width: 1920px;
-  height: 1080px;
 }
 @import './travel/travel.scss';
 @import './news/NewsBoard.scss';
