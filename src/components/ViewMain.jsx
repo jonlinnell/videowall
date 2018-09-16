@@ -27,10 +27,10 @@ const RightScreensWrapper = styled.div`
 `
 
 const Screen1080 = styled.div`
-  height: 1080px;
-  width: 1920px;
+  height: 888px;
+  width: 1728px;
 
-  padding-left: 32px;
+  margin: 96px;
 
   overflow: hidden;
 `

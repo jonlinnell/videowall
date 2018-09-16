@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const MoreInfo = styled.p`
   font-family: "DIN Light";
-  font-size: 1rem;
+  font-size: 3rem;
   color: rgb(255, 255, 255);
   margin-top: auto;
 `
