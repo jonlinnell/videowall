@@ -1,8 +1,22 @@
 import React from 'react'
-import { render } from 'react-dom'
+import ReactDOM from 'react-dom'
+import { injectGlobal } from 'styled-components'
 
-import './styles/main.scss'
+import ViewMain from './components/ViewMain'
 
-import App from './components/containers/App'
+import './index.scss'
 
-render(<App />, document.getElementById('root'))
+/* eslint-disable-next-line no-unused-expressions */
+injectGlobal`
+  html, body {
+    background-color: rgb(183, 0, 98);
+  }
+
+  *, *:after, *:before {
+    box-size: inherit;
+  }
+`
+
+const App = () => <ViewMain />
+
+ReactDOM.render(<App />, document.getElementById('root'))
