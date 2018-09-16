@@ -28,6 +28,15 @@ module.exports = {
         ]
       },
       {
+        test: /\.(png|jpg)$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: 'images/[hash].[ext]'
+          }
+        }
+      },
+      {
         test: /\.(woff|woff2|eot|ttf)$/,
         use: {
           loader: 'file-loader',
@@ -35,14 +44,6 @@ module.exports = {
             name: 'fonts/[name].[ext]'
           }
         }
-      },
-      {
-        test: /\.s?[ac]ss$/,
-        use: [
-          development ? 'style-loader' : MiniCssExtractPlugin.loader,
-          'css-loader',
-          'sass-loader',
-        ],
       },
     ]
   },

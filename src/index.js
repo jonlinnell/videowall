@@ -4,8 +4,6 @@ import { injectGlobal } from 'styled-components'
 
 import ViewMain from './components/ViewMain'
 
-import './index.scss'
-
 import injectFonts from './fonts/importFontsMessy'
 
 /* eslint-disable-next-line no-unused-expressions */
@@ -14,6 +12,11 @@ injectGlobal`
 
   *, *:after, *:before {
     box-sizing: inherit;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
   }
 `
 
