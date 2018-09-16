@@ -12,12 +12,8 @@ import injectFonts from './fonts/importFontsMessy'
 injectGlobal`
   ${injectFonts()}
 
-  html, body {
-    background-color: rgb(183, 0, 98);
-  }
-
   *, *:after, *:before {
-    box-size: inherit;
+    box-sizing: inherit;
   }
 `
 
