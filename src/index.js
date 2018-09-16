@@ -6,8 +6,12 @@ import ViewMain from './components/ViewMain'
 
 import './index.scss'
 
+import injectFonts from './fonts/importFontsMessy'
+
 /* eslint-disable-next-line no-unused-expressions */
 injectGlobal`
+  ${injectFonts()}
+
   html, body {
     background-color: rgb(183, 0, 98);
   }

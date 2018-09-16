@@ -28,6 +28,15 @@ module.exports = {
         ]
       },
       {
+        test: /\.(woff|woff2|eot|ttf)$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: 'fonts/[name].[ext]'
+          }
+        }
+      },
+      {
         test: /\.s?[ac]ss$/,
         use: [
            development ? 'style-loader' : MiniCssExtractPlugin.loader,
