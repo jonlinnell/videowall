@@ -1,7 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import ScreenNews from './ScreenNews'
+import News from './News'
+import Events from './Events'
+
+import Screen from './Screen'
 
 const Screen3x3 = styled.div`
   position: absolute;
@@ -32,8 +35,8 @@ const Screen1080 = styled.div`
 const ViewMain = () => (
   <div>
     <Screen3x3><p>I am some text</p></Screen3x3>
-    <Screen1080 topOffset={0}><p>I am a top screen</p></Screen1080>
-    <Screen1080 topOffset={1}><ScreenNews /></Screen1080>
+    <Screen1080 topOffset={0}><Screen render={News} feed="http://www.lborolondon.ac.uk/rss/news.xml" /></Screen1080>
+    <Screen1080 topOffset={1}><Screen render={Events} feed="http://www.lborolondon.ac.uk/rss/events.xml" /></Screen1080>
     <Screen1080 topOffset={2}><p>I am a bottom screen</p></Screen1080>
   </div>
 )
