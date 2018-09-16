@@ -17,15 +17,20 @@ const Screen3x3 = styled.div`
   outline: 1px solid white;
 `
 
-const Screen1080 = styled.div`
+const RightScreensWrapper = styled.div`
   position: absolute;
-  top: ${props => props.topOffset * 1080}px;
   left: 5761px;
 
-  height: 1032px;
-  width: 1872px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+`
 
-  padding: 24px;
+const Screen1080 = styled.div`
+  height: 1080px;
+  width: 1920px;
+
+  padding-left: 32px;
 
   outline: 1px solid white;
 
@@ -35,9 +40,21 @@ const Screen1080 = styled.div`
 const ViewMain = () => (
   <div>
     <Screen3x3><p>I am some text</p></Screen3x3>
-    <Screen1080 topOffset={0}><Screen render={News} feed="http://www.lborolondon.ac.uk/rss/news.xml" /></Screen1080>
-    <Screen1080 topOffset={1}><Screen render={Events} feed="http://www.lborolondon.ac.uk/rss/events.xml" /></Screen1080>
-    <Screen1080 topOffset={2}><p>I am a bottom screen</p></Screen1080>
+    <RightScreensWrapper>
+      <Screen1080>
+        <Screen
+          render={News}
+          feed="http://www.lborolondon.ac.uk/rss/news.xml"
+        />
+      </Screen1080>
+      <Screen1080>
+        <Screen
+          render={Events}
+          feed="http://www.lborolondon.ac.uk/rss/events.xml"
+        />
+      </Screen1080>
+      <Screen1080><p>I am a bottom screen</p></Screen1080>
+    </RightScreensWrapper>
   </div>
 )
 
