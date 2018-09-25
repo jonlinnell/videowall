@@ -48,13 +48,13 @@ const ViewMain = () => (
       <Screen1080>
         <Screen
           render={News}
-          feed="http://www.lborolondon.ac.uk/rss/news.xml"
+          endpoint="news"
         />
       </Screen1080>
       <Screen1080>
         <Screen
           render={Events}
-          feed="http://www.lborolondon.ac.uk/rss/events.xml"
+          endpoint="events"
         />
       </Screen1080>
       <Screen1080><p>I am a bottom screen</p></Screen1080>

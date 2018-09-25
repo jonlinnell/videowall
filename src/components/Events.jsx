@@ -1,4 +1,5 @@
 import React from 'react'
+import { Grid, Cell } from 'styled-css-grid'
 
 import Event from './Event'
 import Title from './Title'
@@ -8,9 +9,11 @@ import ScreenContentWrapper from './ScreenContentWrapper'
 const Events = ({ items }) => (
   <ScreenContentWrapper>
     <Title>Upcoming Events</Title>
-    {
-      items.slice(0, 4).map(item => <Event key={item.guid} event={item} />)
-    }
+    <Grid columns={2}>
+      {
+        items.slice(0, 4).map(item => <Cell key={item.guid}><Event event={item} /></Cell>)
+      }
+    </Grid>
     <MoreInfo>See what else is coming up: lborolondon.ac.uk/Events</MoreInfo>
   </ScreenContentWrapper>
 )

@@ -6,6 +6,7 @@ import CalendarIcon from './CalendarIcon'
 
 const CalendarWrapper = styled.div`
   position: relative;
+  margin-bottom: 32px;
 `
 
 const Date = styled.div`
@@ -46,7 +47,7 @@ const EventWrapper = styled.div`
 
 const EventTitle = styled.p`
   margin: 0;
-  font-size: 2rem;
+  font-size: 3rem;
   color: white;
   font-family: "DIN Light";
   padding-left: 2rem;
@@ -56,7 +57,7 @@ const Calendar = ({ date }) => (
   <CalendarWrapper>
     <CalendarIcon width={200} />
     <Date>
-      <DayOfMonth>{moment(date).format('Do')}</DayOfMonth>
+      <DayOfMonth>{moment(date).format('D')}</DayOfMonth>
       <Month>{moment(date).format('MMM')}</Month>
     </Date>
   </CalendarWrapper>

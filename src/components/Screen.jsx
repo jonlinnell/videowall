@@ -1,5 +1,7 @@
 import { PureComponent } from 'react'
-import Parser from 'rss-parser'
+import axios from 'axios'
+
+import { api } from '../../config.json'
 
 class Screen extends PureComponent {
   constructor() {
@@ -11,16 +13,21 @@ class Screen extends PureComponent {
   }
 
   componentDidMount() {
-    setInterval(this.loadData(), 60 * 1000)
+    this.intervalId = setInterval(this.loadData(), 60 * 1000)
   }
 
-  loadData() {
-    const parser = new Parser()
-    parser.parseURL(`https://cors-anywhere.herokuapp.com/${this.props.feed}`, (err, feed) => {
-      if (err) throw new Error(err)
+  componentWillUnmount() {
+    clearInterval(this.intervalId)
+  }
 
-      this.setState({ items: feed.items })
-    })
+  intervalId = null
+
+  loadData() {
+    const { endpoint } = this.props
+
+    axios.get(`${api}/${endpoint}`)
+      .then(response => this.setState({ items: response.data }))
+      .catch(error => console.error(error))
   }
 
   render() {
