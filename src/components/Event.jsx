@@ -53,6 +53,27 @@ const EventTitle = styled.p`
   padding-left: 2rem;
 `
 
+const EventDate = styled.p`
+  margin: 0;
+  font-size: 2.5rem;
+  color: white;
+  font-family: "DIN Light";
+  padding-left: 2rem;
+`
+
+const EventLocation = styled.p`
+  margin: 0;
+  font-size: 1.8rem;
+  color: rgb(230, 230, 230);
+  font-family: "DIN Light";
+  padding-left: 2rem;
+`
+
+const EventDetails = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
 const Calendar = ({ date }) => (
   <CalendarWrapper>
     <CalendarIcon width={200} />
@@ -63,10 +84,21 @@ const Calendar = ({ date }) => (
   </CalendarWrapper>
 )
 
-const Event = ({ event: { title, date } }) => (
+const Event = ({
+  event: {
+    title,
+    displayDate,
+    coercedDate,
+    location,
+  },
+}) => (
   <EventWrapper>
-    <Calendar date={date} />
-    <EventTitle>{title}</EventTitle>
+    <Calendar date={coercedDate} />
+    <EventDetails>
+      <EventTitle>{title}</EventTitle>
+      <EventDate>{displayDate}</EventDate>
+      <EventLocation>{location}</EventLocation>
+    </EventDetails>
   </EventWrapper>
 )
 
