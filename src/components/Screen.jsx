@@ -5,12 +5,6 @@ import axios from 'axios'
 import { api } from '../../config.json'
 
 class Screen extends PureComponent {
-  propTypes = {
-    interval: propTypes.number.isRequired,
-    endpoint: propTypes.string.isRequired,
-    render: propTypes.func.isRequired,
-  }
-
   constructor(props) {
     super(props)
 
@@ -42,6 +36,12 @@ class Screen extends PureComponent {
 
     return this.props.render({ items })
   }
+}
+
+Screen.propTypes = {
+  interval: propTypes.number.isRequired,
+  endpoint: propTypes.string.isRequired,
+  render: propTypes.func.isRequired,
 }
 
 export default Screen

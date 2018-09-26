@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import News from './News'
-import Events from './Events'
+import News from './News/News'
+import Events from './Events/Events'
 
 import Screen from './Screen'
 
@@ -49,14 +49,14 @@ const ViewMain = () => (
         <Screen
           render={News}
           endpoint="news"
-          interval="120"
+          interval={120}
         />
       </Screen1080>
       <Screen1080>
         <Screen
           render={Events}
           endpoint="events"
-          interval="120"
+          interval={120}
         />
       </Screen1080>
       <Screen1080><p>I am a bottom screen</p></Screen1080>

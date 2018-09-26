@@ -2,9 +2,9 @@ import React from 'react'
 import { Grid, Cell } from 'styled-css-grid'
 
 import Event from './Event'
-import Title from './Title'
-import MoreInfo from './MoreInfo'
-import ScreenContentWrapper from './ScreenContentWrapper'
+import Title from '../Title'
+import MoreInfo from '../MoreInfo'
+import ScreenContentWrapper from '../ScreenContentWrapper'
 
 const MAX_EVENTS = 4
 
