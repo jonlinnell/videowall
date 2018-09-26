@@ -12,7 +12,7 @@ const News = ({ items }) => (
     {
       items.slice(0, 4).map(item => <NewsItem key={item.guid} item={item} />)
     }
-    <MoreInfo>Find out more, visit lborolondon.ac.uk/News</MoreInfo>
+    <MoreInfo>To find out more, visit lborolondon.ac.uk/news</MoreInfo>
   </ScreenContentWrapper>
 )
 

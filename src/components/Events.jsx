@@ -16,7 +16,7 @@ const Events = ({ items }) => (
         items.slice(0, MAX_EVENTS).map(item => <Cell key={item.guid}><Event event={item} /></Cell>)
       }
     </Grid>
-    <MoreInfo>See what else is coming up: lborolondon.ac.uk/Events</MoreInfo>
+    <MoreInfo>To see what else is coming up, visit lborolondon.ac.uk/events</MoreInfo>
   </ScreenContentWrapper>
 )
 

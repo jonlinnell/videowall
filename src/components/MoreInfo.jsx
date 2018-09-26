@@ -3,15 +3,13 @@ import styled from 'styled-components'
 
 const MoreInfo = styled.p`
   font-family: "DIN Light";
-  font-size: 3rem;
+  font-size: 2rem;
   color: rgb(255, 255, 255);
   margin-top: auto;
 `
 
-const MoreInfoWrapper = ({ children }) => (
+export default ({ children }) => (
   <MoreInfo>
     { children }
   </MoreInfo>
 )
-
-export default MoreInfoWrapper
