@@ -6,7 +6,6 @@ import CalendarIcon from './CalendarIcon'
 
 const CalendarWrapper = styled.div`
   position: relative;
-  margin-bottom: 32px;
 `
 
 const Date = styled.div`
@@ -43,6 +42,7 @@ const Month = styled.p`
 const EventWrapper = styled.div`
   display: flex;
   flex-direction: row;
+  margin-bottom: 64px;
 `
 
 const EventTitle = styled.p`
@@ -51,6 +51,8 @@ const EventTitle = styled.p`
   color: white;
   font-family: "DIN Light";
   padding-left: 2rem;
+  max-lines: 2;
+  text-overflow: ellipsis;
 `
 
 const EventDate = styled.p`
