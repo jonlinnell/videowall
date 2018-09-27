@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import News from './News/News'
 import Events from './Events/Events'
+import ScreenTravel from './Travel/ScreenTravel'
 
 import Screen from './Screen'
 
@@ -59,7 +60,9 @@ const ViewMain = () => (
           interval={120}
         />
       </Screen1080>
-      <Screen1080><p>I am a bottom screen</p></Screen1080>
+      <Screen1080>
+        <ScreenTravel />
+      </Screen1080>
     </RightScreensWrapper>
   </ViewMainBGWrapper>
 )
