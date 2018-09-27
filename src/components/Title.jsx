@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 
 const Title = styled.h1`
@@ -11,10 +10,4 @@ const Title = styled.h1`
   text-transform: uppercase;
 `
 
-const TitleWrapper = ({ children }) => (
-  <Title>
-    { children }
-  </Title>
-)
-
-export default TitleWrapper
+export default Title
