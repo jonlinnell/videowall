@@ -8,16 +8,16 @@ import injectFonts from './fonts/importFontsMessy'
 
 /* eslint-disable-next-line no-unused-expressions */
 injectGlobal`
-  ${injectFonts()}
-
   *, *:after, *:before {
     box-sizing: inherit;
   }
 
-  html, body {
+  body {
     margin: 0;
     padding: 0;
   }
+
+  ${injectFonts()}
 `
 
 const App = () => <ViewMain />
