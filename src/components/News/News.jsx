@@ -6,9 +6,9 @@ import Title from '../Title'
 import MoreInfo from '../MoreInfo'
 import ScreenContentWrapper from '../ScreenContentWrapper'
 
-const News = ({ items }) => (
+const News = ({ items, title }) => (
   <ScreenContentWrapper>
-    <Title>In the news</Title>
+    <Title>{title}</Title>
     {
       items.slice(0, 4).map(item => <NewsItem key={item.guid} item={item} />)
     }

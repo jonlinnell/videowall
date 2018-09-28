@@ -54,8 +54,9 @@ const ViewMain = () => (
       <Screen1080>
         <Screen
           render={News}
-          endpoint="news"
+          endpoint="uniNews"
           interval={120}
+          title="Uni news"
         />
       </Screen1080>
       <Screen1080>
