@@ -57,6 +57,7 @@ const ViewMain = () => (
           endpoint="uniNews"
           interval={120}
           title="Uni news"
+          moreInfo="To find out more, visit lborolondon.ac.uk/news"
         />
       </Screen1080>
       <Screen1080>
@@ -64,6 +65,8 @@ const ViewMain = () => (
           render={Events}
           endpoint="events"
           interval={120}
+          title="Events on CAmpus"
+          moreInfo="To see what else is coming up, visit lborolondon.ac.uk/events"
         />
       </Screen1080>
       <Screen1080temp>

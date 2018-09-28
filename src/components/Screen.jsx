@@ -33,9 +33,8 @@ class Screen extends PureComponent {
 
   render() {
     const { items } = this.state
-    const { title } = this.props
 
-    return this.props.render({ items, title })
+    return this.props.render({ items, ...this.props })
   }
 }
 

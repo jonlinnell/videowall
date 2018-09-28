@@ -8,15 +8,15 @@ import ScreenContentWrapper from '../ScreenContentWrapper'
 
 const MAX_EVENTS = 4
 
-const Events = ({ items }) => (
+const Events = ({ title, items, moreInfo }) => (
   <ScreenContentWrapper>
-    <Title>Upcoming Events</Title>
+    <Title>{ title }</Title>
     <Grid columns={2}>
       {
         items.slice(0, MAX_EVENTS).map(item => <Cell key={item.guid}><Event event={item} /></Cell>)
       }
     </Grid>
-    <MoreInfo>To see what else is coming up, visit lborolondon.ac.uk/events</MoreInfo>
+    <MoreInfo>{ moreInfo }</MoreInfo>
   </ScreenContentWrapper>
 )
 
