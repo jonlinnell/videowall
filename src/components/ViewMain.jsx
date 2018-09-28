@@ -28,12 +28,17 @@ const RightScreensWrapper = styled.div`
 `
 
 const Screen1080 = styled.div`
-  height: 1016px;
-  width: 1728px;
+  height: 1032px;
+  width: 1872px;
 
-  margin: 32px 96px;
+  margin: 24px;
 
   overflow: hidden;
+`
+
+const Screen1080temp = styled(Screen1080)`
+  position: relative;
+  left: -1920px;
 `
 
 const ViewMainBGWrapper = styled.div`
@@ -60,9 +65,9 @@ const ViewMain = () => (
           interval={120}
         />
       </Screen1080>
-      <Screen1080>
+      <Screen1080temp>
         <ScreenTravel />
-      </Screen1080>
+      </Screen1080temp>
     </RightScreensWrapper>
   </ViewMainBGWrapper>
 )
