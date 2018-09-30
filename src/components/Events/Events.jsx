@@ -6,6 +6,8 @@ import Title from '../Title'
 import MoreInfo from '../MoreInfo'
 import ScreenContentWrapper from '../ScreenContentWrapper'
 
+import generateKey from '../../lib/generateKey'
+
 const MAX_EVENTS = 4
 
 const Events = ({ title, items, moreInfo }) => (
@@ -13,7 +15,7 @@ const Events = ({ title, items, moreInfo }) => (
     <Title>{ title }</Title>
     <Grid columns={2}>
       {
-        items.slice(0, MAX_EVENTS).map(item => <Cell key={item.guid}><Event event={item} /></Cell>)
+        items.slice(0, MAX_EVENTS).map(item => <Cell key={generateKey(item)}><Event event={item} /></Cell>)
       }
     </Grid>
     <MoreInfo>{ moreInfo }</MoreInfo>
