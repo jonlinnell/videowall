@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import News from './News/News'
 import Events from './Events/Events'
 import ScreenTravel from './Travel/ScreenTravel'
+import NewsItem from './News/NewsItem'
 
 import Screen from './Screen'
 
@@ -54,6 +55,7 @@ const ViewMain = () => (
       <Screen1080>
         <Screen
           render={News}
+          renderItem={NewsItem}
           endpoint="uniNews"
           interval={120}
           title="Uni news"

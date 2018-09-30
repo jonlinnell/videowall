@@ -15,7 +15,11 @@ const Events = ({ title, items, moreInfo }) => (
     <Title>{ title }</Title>
     <Grid columns={2}>
       {
-        items.slice(0, MAX_EVENTS).map(item => <Cell key={generateKey(item)}><Event event={item} /></Cell>)
+        items.slice(0, MAX_EVENTS).map(item => (
+          <Cell key={generateKey(item)}>
+            <Event event={item} />
+          </Cell>
+        ))
       }
     </Grid>
     <MoreInfo>{ moreInfo }</MoreInfo>
