@@ -10,7 +10,7 @@ const News = ({ items, title, moreInfo }) => (
   <ScreenContentWrapper>
     <Title>{title}</Title>
     {
-      items.slice(0, 4).map(item => <NewsItem key={item.guid} item={item} />)
+      items.slice(0, 7).map(item => <NewsItem key={item.guid} item={item} />)
     }
     <MoreInfo>{moreInfo}</MoreInfo>
   </ScreenContentWrapper>
