@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import colours from './colours.json'
+import colours from '../../lib/colours.json'
 
 const LineContainer = styled.div`
   padding: 12px;
