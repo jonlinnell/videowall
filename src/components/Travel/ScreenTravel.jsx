@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import TubeStatus from './TubeStatus'
+import BusDepartures from './BusDepartures'
 import Title from '../Title'
 
 const Container = styled.div`
@@ -13,8 +14,6 @@ const Container = styled.div`
 const Column = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  align-items: flex-start;
 `
 
 const ScreenTravel = () => (
@@ -24,7 +23,9 @@ const ScreenTravel = () => (
       <Column>
         <TubeStatus />
       </Column>
-      <Column>2</Column>
+      <Column>
+        <BusDepartures stopCode="91426" />
+      </Column>
       <Column>3</Column>
     </Container>
   </div>
