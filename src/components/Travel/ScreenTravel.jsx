@@ -6,13 +6,12 @@ import BusDepartures from './BusDepartures'
 import Title from '../Title'
 
 const Container = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-content: center;
+  display: grid;
+  grid: auto-flow / 1fr 1fr 1fr;
 `
 const Column = styled.div`
   display: flex;
+  margin: 0 1rem; 
   flex-direction: column;
 `
 
