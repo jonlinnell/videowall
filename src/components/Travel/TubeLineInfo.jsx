@@ -4,8 +4,6 @@ import styled from 'styled-components'
 import colours from './colours.json'
 
 const LineContainer = styled.div`
-  border-radius: 6px;
-  margin: 6px 0;
   padding: 12px;
 
   font-family: "DIN Light";
@@ -26,7 +24,7 @@ const LineName = styled.h4`
 
 const LineStatus = styled.p`
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 `
 
 const TubeLineInfo = ({ line: { id, name, lineStatuses } }) => (

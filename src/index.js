@@ -1,10 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { injectGlobal } from 'styled-components'
+import { injectGlobal, ThemeProvider } from 'styled-components'
 
 import ViewMain from './components/ViewMain'
 
 import injectFonts from './fonts/importFontsMessy'
+
+import { theme } from '../config.json'
 
 /* eslint-disable-next-line no-unused-expressions */
 injectGlobal`
@@ -24,6 +26,10 @@ injectGlobal`
   ${injectFonts()}
 `
 
-const App = () => <ViewMain />
+const App = () => (
+  <ThemeProvider theme={theme}>
+    <ViewMain />
+  </ThemeProvider>
+)
 
 ReactDOM.render(<App />, document.getElementById('root'))

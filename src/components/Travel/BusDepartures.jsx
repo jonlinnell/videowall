@@ -11,20 +11,20 @@ const INTERVAL = 1 // in minutes
 const BusDeparturesWrapper = styled.div`
   & > div {
     :first-child {
-      border-top-left-radius: 6px;
-      border-top-right-radius: 6px;
+      border-top-left-radius: ${props => props.theme.radius};
+      border-top-right-radius: ${props => props.theme.radius};
 
       & > :first-child {
-        border-top-left-radius: 6px;
+        border-top-left-radius: ${props => props.theme.radius};
       }
     }
 
     :last-child {
-      border-bottom-left-radius: 6px;
-      border-bottom-right-radius: 6px;
+      border-bottom-left-radius: ${props => props.theme.radius};
+      border-bottom-right-radius: ${props => props.theme.radius};
       
       & > :first-child {
-        border-bottom-left-radius: 6px;
+        border-bottom-left-radius: ${props => props.theme.radius};
       }
     }
   }

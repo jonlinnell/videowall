@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import axios from 'axios'
+import styled from 'styled-components'
 
 import Attribution from './Attribution'
 
@@ -8,6 +9,20 @@ import TubeLineInfo from './TubeLineInfo'
 import { api } from '../../../config.json'
 
 const INTERVAL = 2 // in minutes
+
+const LineWrapper = styled.div`
+  & > div {
+    :first-child {
+      border-top-left-radius: ${props => props.theme.radius};
+      border-top-right-radius: ${props => props.theme.radius};
+    }
+
+    :last-child {
+      border-bottom-left-radius: ${props => props.theme.radius};
+      border-bottom-right-radius: ${props => props.theme.radius};
+    }
+  }
+`
 
 class TubeStatusView extends PureComponent {
   constructor(props) {
@@ -42,11 +57,11 @@ class TubeStatusView extends PureComponent {
 
     return (
       <div>
-        <div>
+        <LineWrapper>
           {
             data.map(line => <TubeLineInfo line={line} key={line.id} />)
           }
-        </div>
+        </LineWrapper>
         <div className="board-footer">
           <Attribution>
             Powered by TfL Open Data. Visit tfl.gov.uk for more information.
