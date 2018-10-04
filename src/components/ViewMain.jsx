@@ -36,11 +36,6 @@ const Screen1080 = styled.div`
   overflow: hidden;
 `
 
-const Screen1080temp = styled(Screen1080)`
-  position: relative;
-  left: -1920px;
-`
-
 const ViewMainBGWrapper = styled.div`
   height: 3240px;
   width: 7680px;
@@ -69,9 +64,9 @@ const ViewMain = () => (
           moreInfo="To see what else is coming up, visit lborolondon.ac.uk/events"
         />
       </Screen1080>
-      <Screen1080temp>
+      <Screen1080>
         <ScreenTravel />
-      </Screen1080temp>
+      </Screen1080>
     </RightScreensWrapper>
   </ViewMainBGWrapper>
 )
