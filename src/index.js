@@ -6,7 +6,7 @@ import ViewMain from './components/ViewMain'
 
 import injectFonts from './fonts/importFontsMessy'
 
-import { theme } from '../config.json'
+import theme from './theme.json'
 
 /* eslint-disable-next-line no-unused-expressions */
 injectGlobal`

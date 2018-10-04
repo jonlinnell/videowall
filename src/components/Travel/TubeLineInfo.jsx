@@ -1,15 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import colours from '../../lib/colours.json'
+import IconTick from '../IconTick'
 
 const LineContainer = styled.div`
   padding: 12px;
 
   font-family: "DIN Light";
 
-  background-color: ${({ id }) => colours[id].background};
-  color: ${({ id }) => colours[id].text};
+  background-color: ${({ id, theme }) => theme.lines[id].background};
+  color: ${({ id, theme }) => theme.lines[id].text};
 
   display: flex;
   flex-wrap: nowrap;
@@ -32,10 +32,12 @@ const TubeLineInfo = ({ line: { id, name, lineStatuses } }) => (
     <LineName>{name}</LineName>
     <LineStatus>
       {
-        lineStatuses
-          .map(status => status.statusSeverityDescription)
-          .filter((v, i, a) => a.indexOf(v) === i) // Unique strings only
-          .join(', ')
+        lineStatuses[0].statusSeverityDescription === 'Good Service'
+          ? <IconTick id={id} />
+          : lineStatuses
+            .map(status => status.statusSeverityDescription)
+            .filter((v, i, a) => a.indexOf(v) === i) // Unique strings only
+            .join(', ')
       }
     </LineStatus>
   </LineContainer>

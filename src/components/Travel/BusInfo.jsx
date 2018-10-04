@@ -19,7 +19,7 @@ const Service = styled.div`
   padding-left: 18px;
 
   color: white;
-  background-color: red;
+  background-color: ${({ theme }) => theme.colours.bus};
   min-width: 1.5rem;
 `
 
