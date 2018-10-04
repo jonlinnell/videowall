@@ -16,7 +16,8 @@ const BusInfoContainer = styled.div`
 const Service = styled.div`
   font-family: "DIN Medium";
   padding: 12px;
-  padding-left: 18px;
+  padding-right: 18px;
+  text-align: right;
 
   color: white;
   background-color: ${({ theme }) => theme.colours.bus};
