@@ -67,7 +67,7 @@ class BusDepartures extends PureComponent {
         {
           error
             ? <pre>{ JSON.stringify(error, null, 2) }</pre>
-            : data.map(bus => <BusInfo {...bus} />)
+            : data.map(bus => <BusInfo key={bus.journeyId} {...bus} />)
         }
       </BusDeparturesWrapper>
     )
