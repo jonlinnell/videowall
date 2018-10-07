@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import TubeStatus from './TubeStatus'
 import BusDepartures from './BusDepartures'
+import RailDepartures from './RailDepartures'
 import Title from '../Title'
 
 const Container = styled.div`
@@ -25,7 +26,11 @@ const ScreenTravel = () => (
       <Column>
         <BusDepartures stopCode="91426" />
       </Column>
-      <Column>3</Column>
+      <Column>
+        <RailDepartures
+          station="KGX"
+        />
+      </Column>
     </Container>
   </div>
 )
