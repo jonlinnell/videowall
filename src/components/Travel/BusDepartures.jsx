@@ -11,23 +11,37 @@ const INTERVAL = 1 // in minutes
 const BusDeparturesWrapper = styled.div`
   & > div {
     :first-child {
-      border-top-left-radius: ${props => props.theme.radius};
-      border-top-right-radius: ${props => props.theme.radius};
+      border-top-left-radius: ${({ theme }) => theme.radius};
+      border-top-right-radius: ${({ theme }) => theme.radius};
 
       & > :first-child {
-        border-top-left-radius: ${props => props.theme.radius};
+        border-top-left-radius: ${({ theme }) => theme.radius};
       }
     }
 
     :last-child {
-      border-bottom-left-radius: ${props => props.theme.radius};
-      border-bottom-right-radius: ${props => props.theme.radius};
+      border-bottom-left-radius: ${({ theme }) => theme.radius};
+      border-bottom-right-radius: ${({ theme }) => theme.radius};
       
       & > :first-child {
-        border-bottom-left-radius: ${props => props.theme.radius};
+        border-bottom-left-radius: ${({ theme }) => theme.radius};
       }
     }
   }
+`
+
+const Header = styled.div`
+  border-top-left-radius: ${({ theme }) => theme.radius};
+  border-top-right-radius: ${({ theme }) => theme.radius};
+  padding: 24px;
+  background-color: white;
+`
+
+const Title = styled.h4`
+  font-family: 'DIN Light';
+  font-size: 2rem;
+
+  margin: 0;
 `
 
 class BusDepartures extends PureComponent {
@@ -35,7 +49,10 @@ class BusDepartures extends PureComponent {
     super(props)
 
     this.state = {
-      data: [],
+      data: {
+        stopName: null,
+        buses: [],
+      },
       error: null,
     }
   }
@@ -60,14 +77,17 @@ class BusDepartures extends PureComponent {
   }
 
   render() {
-    const { data, error } = this.state
+    const { data: { stopName, buses }, error } = this.state
 
     return (
       <BusDeparturesWrapper>
+        <Header>
+          <Title>{ stopName }</Title>
+        </Header>
         {
           error
             ? <pre>{ JSON.stringify(error, null, 2) }</pre>
-            : data.map(bus => <BusInfo key={bus.journeyId} {...bus} />)
+            : buses.map(bus => <BusInfo key={bus.journeyId} {...bus} />)
         }
       </BusDeparturesWrapper>
     )

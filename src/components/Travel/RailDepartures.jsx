@@ -29,7 +29,7 @@ const Header = styled.div`
   color: white;
 `
 
-const Station = styled.h5`
+const Station = styled.h4`
   font-size: 2rem;
   margin: 0;
 `
