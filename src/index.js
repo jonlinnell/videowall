@@ -23,6 +23,13 @@ injectGlobal`
     overflow: hidden;
   }
 
+  .parallaxContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+  }
+
   ${injectFonts()}
 `
 

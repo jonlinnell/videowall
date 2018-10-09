@@ -1,14 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import News from './News/News'
 import Events from './Events/Events'
 import ScreenTravel from './Travel/ScreenTravel'
-import NewsItem from './News/NewsItem'
 
-import Screen from './Screen'
+import FeedContainer from './FeedContainer'
 
 import bg from '../images/ViewMainBG.png'
+import NewsScroller from './News/NewsScroller'
 
 const Screen3x3 = styled.div`
   position: absolute;
@@ -48,17 +47,10 @@ const ViewMain = () => (
     <Screen3x3><p>I am some text</p></Screen3x3>
     <RightScreensWrapper>
       <Screen1080>
-        <Screen
-          render={News}
-          renderItem={NewsItem}
-          endpoint="uniNews"
-          interval={120}
-          title="Uni news"
-          moreInfo="To find out more, visit lborolondon.ac.uk/news"
-        />
+        <NewsScroller />
       </Screen1080>
       <Screen1080>
-        <Screen
+        <FeedContainer
           render={Events}
           endpoint="events"
           interval={120}

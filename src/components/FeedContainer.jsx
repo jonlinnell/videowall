@@ -4,7 +4,7 @@ import axios from 'axios'
 
 import { api } from '../../config.json'
 
-class Screen extends PureComponent {
+class FeedContainer extends PureComponent {
   constructor(props) {
     super(props)
 
@@ -38,10 +38,10 @@ class Screen extends PureComponent {
   }
 }
 
-Screen.propTypes = {
+FeedContainer.propTypes = {
   interval: propTypes.number.isRequired,
   endpoint: propTypes.string.isRequired,
   render: propTypes.func.isRequired,
 }
 
-export default Screen
+export default FeedContainer
