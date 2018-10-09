@@ -10,7 +10,8 @@ const TrainInfo = styled.div`
 const Row = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: start;
+  align-items: middle;
+  justify-content: middle;
 `
 
 const Destination = styled.p`
@@ -20,14 +21,16 @@ const Destination = styled.p`
 
 const Time = styled.p`
   font-size: 2rem;
+  line-height: 2rem;
   margin: 0 ${({ theme }) => theme.boxMargin};
 `
 
 const LateText = styled.p`
   font-size: 1.5rem;
-  margin: 0 ${({ theme }) => theme.boxMargin};
+  line-height: 2rem;
+  margin: 0;
 
-  color: rgb(200, 200, 100);
+  color: rgb(244, 113, 66);
 `
 
 const Platform = styled.p`
