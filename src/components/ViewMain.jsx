@@ -3,20 +3,13 @@ import styled from 'styled-components'
 
 import Events from './Events/Events'
 import ScreenTravel from './Travel/ScreenTravel'
+import Screen3x3 from './Screen3x3'
+import Welcome from './Welcome'
 
 import FeedContainer from './FeedContainer'
 
 import bg from '../images/ViewMainBG.png'
 import NewsScroller from './News/NewsScroller'
-
-const Screen3x3 = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  height: 3240px;
-  width: 5760px;
-`
 
 const RightScreensWrapper = styled.div`
   position: absolute;
@@ -44,7 +37,7 @@ const ViewMainBGWrapper = styled.div`
 
 const ViewMain = () => (
   <ViewMainBGWrapper>
-    <Screen3x3><p>I am some text</p></Screen3x3>
+    <Screen3x3 render={() => <Welcome />} />
     <RightScreensWrapper>
       <Screen1080>
         <NewsScroller />
