@@ -43,6 +43,7 @@ const EventWrapper = styled.div`
   display: flex;
   flex-direction: row;
   margin-bottom: 64px;
+  margin-left: 24px;
 `
 
 const EventTitle = styled.p`

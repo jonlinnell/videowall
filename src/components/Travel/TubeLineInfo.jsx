@@ -38,6 +38,7 @@ const TubeLineInfo = ({ line: { id, name, lineStatuses } }) => (
           : lineStatuses
             .map(status => status.statusSeverityDescription)
             .filter((v, i, a) => a.indexOf(v) === i) // Unique strings only
+            .map(i => i.replace(' ', '\xa0')) // Prevent status messages getting split over lines
             .join(', ')
       }
     </LineStatus>

@@ -24,7 +24,7 @@ const LineWrapper = styled.div`
   }
 `
 
-class TubeStatusView extends PureComponent {
+class TubeStatus extends PureComponent {
   constructor(props) {
     super(props)
 
@@ -86,4 +86,4 @@ class TubeStatusView extends PureComponent {
   }
 }
 
-export default TubeStatusView
+export default TubeStatus

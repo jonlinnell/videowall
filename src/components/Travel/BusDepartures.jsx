@@ -15,6 +15,8 @@ const WhiteRoundel = styled(IconRoundel)`
 `
 
 const BusDeparturesWrapper = styled.div`
+  width: 100%;
+  
   & > div {
     :first-child {
       border-top-left-radius: ${({ theme }) => theme.radius};

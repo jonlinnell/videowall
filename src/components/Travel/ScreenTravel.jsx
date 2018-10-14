@@ -6,6 +6,7 @@ import BusDepartures from './BusDepartures'
 import RailDepartures from './RailDepartures'
 import IconNationalRail from './IconNationalRail'
 import IconRoundel from './IconRoundel'
+import Clock from './Clock'
 
 import { travel } from '../../../config.json'
 
@@ -14,11 +15,29 @@ const { busStopCodes } = travel
 const Container = styled.div`
   display: grid;
   grid: auto-flow / 1fr 1fr 1fr 1fr;
+  height: 100%;
+  max-height: 1080px;
+  overflow: hidden;
 `
 const Column = styled.div`
   display: flex;
-  margin: 0 1rem; 
+  margin: 0 24px; 
   flex-direction: column;
+  align-items: start;
+`
+
+const TravelFooter = styled.div`
+  margin-top: auto;
+`
+
+const WebLink = styled.span`
+  font-family: 'DIN Regular';
+`
+
+const AdditionalInformation = styled.div`
+  color: white;
+  font-family: 'DIN Light';
+  padding: ${({ theme }) => theme.boxPadding} 0;
 `
 
 const ScreenTravel = () => (
@@ -29,7 +48,7 @@ const ScreenTravel = () => (
     <Column>
       <RailDepartures
         station="HKW"
-        limit={4}
+        limit={8}
         icon={IconRoundel}
         iconWidth={32}
       />
@@ -38,20 +57,28 @@ const ScreenTravel = () => (
       <RailDepartures
         station="SFA"
         destination="STP"
-        limit={4}
+        limit={3}
         icon={IconNationalRail}
         iconWidth={32}
       />
       <RailDepartures
         station="STP"
         destination="LBO"
-        limit={4}
+        limit={2}
         icon={IconNationalRail}
         iconWidth={32}
       />
     </Column>
     <Column>
       <BusDepartures stopCode={busStopCodes.join(',')} />
+      <TravelFooter>
+        <AdditionalInformation>
+          Take this with you when you go. Visit
+          <WebLink> lboro.london/travel </WebLink>
+          on your smartphone or tablet.
+        </AdditionalInformation>
+        <Clock />
+      </TravelFooter>
     </Column>
   </Container>
 )

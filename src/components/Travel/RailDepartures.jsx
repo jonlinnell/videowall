@@ -9,6 +9,7 @@ import { api } from '../../../config.json'
 const INTERVAL = 1 // in minutes
 
 const RailDeparturesWrapper = styled.div`
+  width: 100%;
   background-color: rgba(0,0,0,0.15);
 
   & > div {
@@ -99,13 +100,11 @@ class RailDepartures extends PureComponent {
             <Station>{ data.station.name }</Station>
             <Icon width={iconWidth} />
           </HeaderTop>
-          <Subheading>Next trains departing from this station
-            {
-              data.destination.name
-                ? `, calling at ${data.destination.name}`
-                : '.'
-            }
-          </Subheading>
+          {
+            data.destination.name
+              ? <Subheading>{`Trains calling at ${data.destination.name}`}</Subheading>
+              : null
+          }
         </Header>
         {
           error

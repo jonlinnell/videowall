@@ -14,6 +14,10 @@ injectGlobal`
     box-sizing: inherit;
   }
 
+  html {
+    font-size: 12px;
+  }
+
   body {
     margin: 0;
     padding: 0;
