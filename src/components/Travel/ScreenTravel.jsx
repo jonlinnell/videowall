@@ -5,6 +5,7 @@ import TubeStatus from './TubeStatus'
 import BusDepartures from './BusDepartures'
 import RailDepartures from './RailDepartures'
 import Title from '../Title'
+import IconNationalRail from './IconNationalRail'
 
 import { travel } from '../../../config.json'
 
@@ -38,6 +39,8 @@ const ScreenTravel = () => (
           station="SFA"
           destination="STP"
           limit={4}
+          icon={IconNationalRail}
+          iconWidth={32}
         />
       </Column>
     </Container>

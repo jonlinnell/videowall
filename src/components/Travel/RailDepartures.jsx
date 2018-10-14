@@ -29,6 +29,13 @@ const Header = styled.div`
   color: white;
 `
 
+const HeaderTop = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-content: start;
+  align-items: center;
+`
+
 const Station = styled.h4`
   font-size: 2rem;
   margin: 0;
@@ -77,12 +84,19 @@ class RailDepartures extends PureComponent {
 
   render() {
     const { data, error } = this.state
-    const { limit } = this.props
+    const { limit, icon, iconWidth } = this.props
+
+    const Icon = styled(icon)`
+      margin-left: auto;
+    `
 
     return (
       <RailDeparturesWrapper>
         <Header>
-          <Station>{ data.station.name }</Station>
+          <HeaderTop>
+            <Station>{ data.station.name }</Station>
+            <Icon width={iconWidth} />
+          </HeaderTop>
           <Subheading>Next trains departing from this station
             {
               data.destination.name
