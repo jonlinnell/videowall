@@ -6,7 +6,7 @@ const Title = styled.h1`
   color: rgb(255, 255, 255);
   margin: 0;
   padding: 0;
-  margin-bottom: 2rem;
+  margin-bottom: 18px;
   text-transform: uppercase;
 `
 

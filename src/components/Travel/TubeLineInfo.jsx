@@ -24,7 +24,8 @@ const LineName = styled.h4`
 
 const LineStatus = styled.p`
   margin: 0;
-  font-size: 0.8rem;
+  font-size: 18px;
+  text-align: right;
 `
 
 const TubeLineInfo = ({ line: { id, name, lineStatuses } }) => (
