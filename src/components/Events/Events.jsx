@@ -8,14 +8,16 @@ import ScreenContentWrapper from '../ScreenContentWrapper'
 
 import generateKey from '../../lib/generateKey'
 
-const MAX_EVENTS = 4
+const MAX_EVENTS = 6
 
 const Events = ({ title, items, moreInfo }) => (
   <ScreenContentWrapper>
     <Title>{ title }</Title>
     <Grid columns={2}>
       {
-        items.slice(0, MAX_EVENTS).map(item => (
+        items
+        .filter(e => e.location.match(/Loughborough University/ig))
+        .slice(0, MAX_EVENTS).map(item => (
           <Cell key={generateKey(item)}>
             <Event event={item} />
           </Cell>
