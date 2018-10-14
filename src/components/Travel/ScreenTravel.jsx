@@ -4,8 +4,8 @@ import styled from 'styled-components'
 import TubeStatus from './TubeStatus'
 import BusDepartures from './BusDepartures'
 import RailDepartures from './RailDepartures'
-import Title from '../Title'
 import IconNationalRail from './IconNationalRail'
+import IconRoundel from './IconRoundel'
 
 import { travel } from '../../../config.json'
 
@@ -22,29 +22,38 @@ const Column = styled.div`
 `
 
 const ScreenTravel = () => (
-  <div>
-    <Title>Travel</Title>
-    <Container>
-      <Column>
-        <TubeStatus />
-      </Column>
-      <Column>
-        <TubeStatus />
-      </Column>
-      <Column>
-        <BusDepartures stopCode={busStopCodes.join(',')} />
-      </Column>
-      <Column>
-        <RailDepartures
-          station="SFA"
-          destination="STP"
-          limit={4}
-          icon={IconNationalRail}
-          iconWidth={32}
-        />
-      </Column>
-    </Container>
-  </div>
+  <Container>
+    <Column>
+      <TubeStatus />
+    </Column>
+    <Column>
+      <RailDepartures
+        station="HKW"
+        limit={4}
+        icon={IconRoundel}
+        iconWidth={32}
+      />
+    </Column>
+    <Column>
+      <RailDepartures
+        station="SFA"
+        destination="STP"
+        limit={4}
+        icon={IconNationalRail}
+        iconWidth={32}
+      />
+      <RailDepartures
+        station="STP"
+        destination="LBO"
+        limit={4}
+        icon={IconNationalRail}
+        iconWidth={32}
+      />
+    </Column>
+    <Column>
+      <BusDepartures stopCode={busStopCodes.join(',')} />
+    </Column>
+  </Container>
 )
 
 export default ScreenTravel
