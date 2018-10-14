@@ -3,10 +3,16 @@ import axios from 'axios'
 import styled from 'styled-components'
 
 import BusInfo from './BusInfo'
+import IconRoundel from './IconRoundel'
 
 import { api } from '../../../config.json'
 
 const INTERVAL = 1 // in minutes
+
+const WhiteRoundel = styled(IconRoundel)`
+  fill: white;
+  margin-left: auto;
+`
 
 const BusDeparturesWrapper = styled.div`
   & > div {
@@ -33,13 +39,21 @@ const BusDeparturesWrapper = styled.div`
 const Header = styled.div`
   border-top-left-radius: ${({ theme }) => theme.radius};
   border-top-right-radius: ${({ theme }) => theme.radius};
-  padding: 24px;
-  background-color: white;
+  padding: 12px;
+  background-color: ${({ theme }) => theme.colours.bus};
+  color: white;
+
+  height: 64px;
+
+  display: flex;
+  flex-direction: row;
+  align-content: start;
 `
 
 const Title = styled.h4`
   font-family: 'DIN Light';
   font-size: 2rem;
+  line-height: 64px;
 
   margin: 0;
 `
@@ -83,6 +97,7 @@ class BusDepartures extends PureComponent {
       <BusDeparturesWrapper>
         <Header>
           <Title>{ stopName }</Title>
+          <WhiteRoundel width={32} />
         </Header>
         {
           error

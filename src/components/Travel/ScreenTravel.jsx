@@ -6,9 +6,13 @@ import BusDepartures from './BusDepartures'
 import RailDepartures from './RailDepartures'
 import Title from '../Title'
 
+import { travel } from '../../../config.json'
+
+const { busStopCodes } = travel
+
 const Container = styled.div`
   display: grid;
-  grid: auto-flow / 1fr 1fr 1fr;
+  grid: auto-flow / 1fr 1fr 1fr 1fr;
 `
 const Column = styled.div`
   display: flex;
@@ -24,11 +28,16 @@ const ScreenTravel = () => (
         <TubeStatus />
       </Column>
       <Column>
-        <BusDepartures stopCode="91426" />
+        <TubeStatus />
+      </Column>
+      <Column>
+        <BusDepartures stopCode={busStopCodes.join(',')} />
       </Column>
       <Column>
         <RailDepartures
-          station="KGX"
+          station="SFA"
+          destination="STP"
+          limit={4}
         />
       </Column>
     </Container>

@@ -77,6 +77,7 @@ class RailDepartures extends PureComponent {
 
   render() {
     const { data, error } = this.state
+    const { limit } = this.props
 
     return (
       <RailDeparturesWrapper>
@@ -93,7 +94,7 @@ class RailDepartures extends PureComponent {
         {
           error
             ? <pre>{ JSON.stringify(error, null, 2) }</pre>
-            : data.trainServices.slice(0, 5).map(train =>
+            : data.trainServices.slice(0, limit).map(train =>
               <TrainInfo key={train.serviceId} {...train} />)
         }
       </RailDeparturesWrapper>
