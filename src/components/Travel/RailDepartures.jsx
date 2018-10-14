@@ -88,6 +88,8 @@ class RailDepartures extends PureComponent {
 
     const Icon = styled(icon)`
       margin-left: auto;
+      fill: white;
+      stroke: white;
     `
 
     return (
