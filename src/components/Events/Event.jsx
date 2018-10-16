@@ -12,7 +12,7 @@ const Date = styled.div`
   position: absolute;
   width: 200px;
 
-  top: 60px;
+  top: 54px;
 
   display: flex;
   flex-direction: column;
@@ -26,15 +26,15 @@ const Date = styled.div`
 
 const DayOfMonth = styled.p`
   font-family: "DIN Light";
-  font-size: 4rem;
+  font-size: 72px;
   margin: 0;
 `
 
 const Month = styled.p`
   font-family: "DIN Regular";
   position: relative;
-  top: -12px;
-  font-size: 1.5rem;
+  top: -24px;
+  font-size: 32px;
   text-transform: uppercase;
   margin: 0;
 `
@@ -42,13 +42,13 @@ const Month = styled.p`
 const EventWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  margin-bottom: 64px;
+  margin-bottom: 32px;
   margin-left: 24px;
 `
 
 const EventTitle = styled.p`
   margin: 0;
-  font-size: 3rem;
+  font-size: 48px;
   color: white;
   font-family: "DIN Light";
   padding-left: 2rem;
@@ -58,7 +58,7 @@ const EventTitle = styled.p`
 
 const EventDate = styled.p`
   margin: 0;
-  font-size: 2.5rem;
+  font-size: 32px;
   color: white;
   font-family: "DIN Light";
   padding-left: 2rem;
@@ -66,7 +66,7 @@ const EventDate = styled.p`
 
 const EventLocation = styled.p`
   margin: 0;
-  font-size: 1.8rem;
+  font-size: 24px;
   color: rgb(230, 230, 230);
   font-family: "DIN Light";
   padding-left: 2rem;

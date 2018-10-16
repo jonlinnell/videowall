@@ -17,6 +17,7 @@ const Service = styled.div`
   font-family: "DIN Medium";
   padding: 12px;
   padding-right: 18px;
+  font-size: 18px;
   text-align: right;
 
   color: white;

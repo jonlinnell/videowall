@@ -19,13 +19,14 @@ const LineContainer = styled.div`
 
 const LineName = styled.h4`
   margin: 0;
-  font-size: 1.2rem;
+  font-size: 24px;
 `
 
 const LineStatus = styled.p`
   margin: 0;
-  font-size: 18px;
+  font-size: 6px;
   text-align: right;
+  font-family: 'DIN Extlight';
 `
 
 const TubeLineInfo = ({ line: { id, name, lineStatuses } }) => (

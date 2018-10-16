@@ -54,7 +54,7 @@ const Header = styled.div`
 
 const Title = styled.h4`
   font-family: 'DIN Light';
-  font-size: 2rem;
+  font-size: 28px;
   line-height: 64px;
 
   margin: 0;

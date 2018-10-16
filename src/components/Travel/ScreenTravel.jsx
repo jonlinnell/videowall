@@ -15,8 +15,7 @@ const { busStopCodes } = travel
 const Container = styled.div`
   display: grid;
   grid: auto-flow / 1fr 1fr 1fr 1fr;
-  height: 100%;
-  max-height: 1080px;
+  height: 1032px;
   overflow: hidden;
 `
 const Column = styled.div`

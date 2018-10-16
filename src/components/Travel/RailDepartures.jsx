@@ -38,12 +38,12 @@ const HeaderTop = styled.div`
 `
 
 const Station = styled.h4`
-  font-size: 2rem;
+  font-size: 28px;
   margin: 0;
 `
 
 const Subheading = styled.p`
-  font-size: 0.7rem;
+  font-size: 18px;
   font-family: 'DIN Extlight';
 
   padding: 0;

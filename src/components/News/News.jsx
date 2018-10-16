@@ -11,7 +11,7 @@ const ItemsContainer = styled.div`
   position: absolute;
   display: flex;
   flex-direction: column;
-  top: 160px;
+  top: 120px;
 
   & > div {
     position: initial !important;
