@@ -10,24 +10,25 @@ const BusInfoContainer = styled.div`
   align-items: center;
   width: 100%;
 
-  padding: 0;
   background-color: white;
 `
 
 const Service = styled.div`
   font-family: "DIN Medium";
-  padding: 22px;
-  padding-right: 18px;
+
+  padding: 12px 24px;
+
+  width: 64px;
+
   font-size: 22px;
   text-align: right;
 
   color: white;
   background-color: ${({ theme }) => theme.colours.bus};
-  width: 32px;
 `
 
 const Destination = styled.div`
-  padding: 24px;
+  padding: 12px 24px;
   font-size: 22px;
   line-height: 22px;
   color: black;

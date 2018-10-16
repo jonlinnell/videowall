@@ -44,19 +44,18 @@ const Header = styled.div`
 
   background-color: ${({ theme }) => theme.colours.bus};
   color: white;
-  height: 64px;
 
-  padding: 12px 24px;
+  padding: 24px;
 
   display: flex;
   flex-direction: row;
   align-content: start;
+  align-items: center;
 `
 
 const Title = styled.h4`
   font-family: 'DIN Light';
   font-size: 28px;
-  line-height: 64px;
 
   margin: 0;
 `
