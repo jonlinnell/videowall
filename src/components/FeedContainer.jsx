@@ -14,7 +14,8 @@ class FeedContainer extends PureComponent {
   }
 
   componentDidMount() {
-    this.intervalId = setInterval(this.loadData(), this.props.interval * 1000)
+    this.loadData()
+    this.intervalId = setInterval(() => this.loadData(), this.props.interval * 1000)
   }
 
   componentWillUnmount() {

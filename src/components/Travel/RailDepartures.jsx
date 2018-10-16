@@ -67,7 +67,7 @@ class RailDepartures extends PureComponent {
 
   componentDidMount() {
     this.fetchData()
-    this.intervalId = setInterval(() => this.fetchData, INTERVAL * 60000)
+    this.intervalId = setInterval(() => this.fetchData(), INTERVAL * 60000)
   }
 
   componentWillUnmount() {

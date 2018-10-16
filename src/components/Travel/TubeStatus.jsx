@@ -8,7 +8,7 @@ import TubeLineInfo from './TubeLineInfo'
 
 import { api } from '../../../config.json'
 
-const INTERVAL = 2 // in minutes
+const INTERVAL = 5 // in minutes
 
 const TubeStatusWrapper = styled.div`
   width: 100%;
@@ -43,7 +43,7 @@ class TubeStatus extends PureComponent {
 
   componentDidMount() {
     this.fetchData()
-    this.intervalId = setInterval(() => this.fetchData, INTERVAL * 60000)
+    this.intervalId = setInterval(() => this.fetchData(), INTERVAL * 60000)
   }
 
   componentWillUnmount() {

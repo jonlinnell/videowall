@@ -7,7 +7,7 @@ import IconRoundel from './IconRoundel'
 
 import { api } from '../../../config.json'
 
-const INTERVAL = 1 // in minutes
+const INTERVAL = 0.5 // in minutes
 
 const WhiteRoundel = styled(IconRoundel)`
   fill: white;
@@ -76,7 +76,7 @@ class BusDepartures extends PureComponent {
 
   componentDidMount() {
     this.fetchData()
-    this.intervalId = setInterval(() => this.fetchData, INTERVAL * 60000)
+    this.intervalId = setInterval(() => this.fetchData(), INTERVAL * 60000)
   }
 
   componentWillUnmount() {
