@@ -12,22 +12,23 @@ const Row = styled.div`
   flex-direction: row;
   align-items: middle;
   justify-content: middle;
+  margin: 8px 0 12px 0;
 `
 
 const Destination = styled.p`
-  font-size: 0.8rem;
+  font-size: 24px;
   margin: 0 ${({ theme }) => theme.boxMargin};
 `
 
 const Time = styled.p`
-  font-size: 2rem;
-  line-height: 2rem;
+  font-size: 36px;
+  line-height: 36px;
   margin: 0 ${({ theme }) => theme.boxMargin};
 `
 
 const LateText = styled.p`
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 18px;
+  line-height: 36px;
   margin: 0;
 
   color: rgb(244, 113, 66);
@@ -36,7 +37,7 @@ const LateText = styled.p`
 const Platform = styled.p`
   margin: 0 ${({ theme }) => theme.boxMargin} 0 auto;
   font-family: 'DIN Extlight';
-  font-size: 0.5rem;
+  font-size: 18px;
 `
 
 const renderServiceInfo = (etd) => {

@@ -41,11 +41,12 @@ const BusDeparturesWrapper = styled.div`
 const Header = styled.div`
   border-top-left-radius: ${({ theme }) => theme.radius};
   border-top-right-radius: ${({ theme }) => theme.radius};
-  padding: 12px;
+
   background-color: ${({ theme }) => theme.colours.bus};
   color: white;
-
   height: 64px;
+
+  padding: 12px 24px;
 
   display: flex;
   flex-direction: row;

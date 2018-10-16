@@ -24,6 +24,7 @@ const RailDeparturesWrapper = styled.div`
 const Header = styled.div`
   border-top-left-radius: ${({ theme }) => theme.radius};
   border-top-right-radius: ${({ theme }) => theme.radius};
+
   padding: 24px;
 
   font-family: 'DIN Light';

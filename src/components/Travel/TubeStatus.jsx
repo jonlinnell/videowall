@@ -10,7 +10,13 @@ import { api } from '../../../config.json'
 
 const INTERVAL = 2 // in minutes
 
+const TubeStatusWrapper = styled.div`
+  width: 100%;
+`
+
 const LineWrapper = styled.div`
+  width: 100%;
+
   & > div {
     :first-child {
       border-top-left-radius: ${props => props.theme.radius};
@@ -56,7 +62,7 @@ class TubeStatus extends PureComponent {
     const { data, error, loading } = this.state
 
     return (
-      <div>
+      <TubeStatusWrapper>
         <LineWrapper>
           {
             data.map(line => <TubeLineInfo line={line} key={line.id} />)
@@ -81,7 +87,7 @@ class TubeStatus extends PureComponent {
           )
           : null
         }
-      </div>
+      </TubeStatusWrapper>
     )
   }
 }

@@ -35,6 +35,7 @@ const WebLink = styled.span`
 
 const AdditionalInformation = styled.div`
   color: white;
+  font-size: 24px;
   font-family: 'DIN Light';
   padding: ${({ theme }) => theme.boxPadding} 0;
 `

@@ -7,6 +7,7 @@ const BusInfoContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-content: space-between;
+  align-items: center;
   width: 100%;
 
   padding: 0;
@@ -15,23 +16,27 @@ const BusInfoContainer = styled.div`
 
 const Service = styled.div`
   font-family: "DIN Medium";
-  padding: 12px;
+  padding: 22px;
   padding-right: 18px;
-  font-size: 18px;
+  font-size: 22px;
   text-align: right;
 
   color: white;
   background-color: ${({ theme }) => theme.colours.bus};
-  min-width: 1.5rem;
+  width: 32px;
 `
 
 const Destination = styled.div`
-  padding: 12px;
+  padding: 24px;
+  font-size: 22px;
+  line-height: 22px;
   color: black;
 `
 
 const ETA = styled.div`
-  padding: 12px;
+  padding: 18px;
+  font-size: 18px;
+  line-height: 18px;
   color: black;
   margin-left: auto;
 `

@@ -24,7 +24,7 @@ const LineName = styled.h4`
 
 const LineStatus = styled.p`
   margin: 0;
-  font-size: 6px;
+  font-size: 16px;
   text-align: right;
   font-family: 'DIN Extlight';
 `
