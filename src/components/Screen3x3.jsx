@@ -74,7 +74,7 @@ export default class Screen3x3 extends Component {
           width="5760"
           height="3240"
           title="Video content"
-          src={`https://www.youtube.com/embed/${content}?rel=0&autoplay=1&loop=1&mute=1&controls=1&playlist=${content}`}
+          src={`https://www.youtube.com/embed/${content}?rel=0&autoplay=1&loop=1&mute=1&controls=0&playlist=${content}`}
           frameBorder={false}
         />
       )
