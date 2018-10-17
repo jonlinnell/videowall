@@ -62,6 +62,7 @@ class RailDepartures extends PureComponent {
         destination: {},
         trainServices: [],
       },
+      hasError: false,
       error: null,
     }
   }
@@ -81,12 +82,19 @@ class RailDepartures extends PureComponent {
     const { station, destination } = this.props
 
     axios.get(`${api}/rail/${station}${destination ? `/${destination}` : ''}`)
-      .then(response => this.setState({ data: response.data }))
-      .catch(error => this.setState({ error }))
+      .then(response => this.setState({
+        data: response.data,
+        hasError: false,
+        error: null,
+      }))
+      .catch(error => this.setState({
+        hasError: true,
+        error,
+      }))
   }
 
   render() {
-    const { data, error } = this.state
+    const { data, hasError, error } = this.state
     const { limit, icon, iconWidth } = this.props
 
     const Icon = styled(icon)`
@@ -95,7 +103,7 @@ class RailDepartures extends PureComponent {
       stroke: white;
     `
 
-    if (error) {
+    if (hasError) {
       return (
         <Error
           error={error}

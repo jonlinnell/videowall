@@ -55,7 +55,11 @@ class TubeStatus extends PureComponent {
 
   fetchData = () => {
     axios.get(`${api}/tube`)
-      .then(response => this.setState({ data: response.data }))
+      .then(response => this.setState({
+        data: response.data,
+        hasError: false,
+        error: null,
+      }))
       .catch(error => this.setState({
         hasError: true,
         error,

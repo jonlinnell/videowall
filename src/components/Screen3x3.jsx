@@ -32,12 +32,14 @@ export default class Screen3x3 extends Component {
 
   componentWillMount() {
     this.fetchData()
-    this.intervalId = setInterval(() => this.fetchData(), 60000)
+    this.intervalId = setInterval(() => this.fetchData(), 10000)
   }
 
   fetchData() {
     axios.get(`${api}/update3x3`)
       .then(({ data: { content, contentType } }) => this.setState({
+        hasError: false,
+        error: null,
         contentType,
         content,
       }))

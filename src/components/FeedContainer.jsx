@@ -32,7 +32,11 @@ class FeedContainer extends PureComponent {
     const { endpoint } = this.props
 
     axios.get(`${api}/${endpoint}`)
-      .then(response => this.setState({ items: response.data }))
+      .then(response => this.setState({
+        items: response.data,
+        hasError: false,
+        error: null,
+      }))
       .catch(error => this.setState({
         hasError: true,
         error,

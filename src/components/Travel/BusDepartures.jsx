@@ -70,6 +70,7 @@ class BusDepartures extends PureComponent {
         stopName: null,
         buses: [],
       },
+      hasError: false,
       error: null,
     }
   }
@@ -89,14 +90,21 @@ class BusDepartures extends PureComponent {
     const { stopCode } = this.props
 
     axios.get(`${api}/bus/${stopCode}`)
-      .then(response => this.setState({ data: response.data }))
-      .catch(error => this.setState({ error }))
+      .then(response => this.setState({
+        data: response.data,
+        hasError: false,
+        error: null,
+      }))
+      .catch(error => this.setState({
+        hasError: true,
+        error,
+      }))
   }
 
   render() {
-    const { data: { stopName, buses }, error } = this.state
+    const { data: { stopName, buses }, hasError, error } = this.state
 
-    if (error) {
+    if (hasError) {
       return (
         <Error
           error={error}
