@@ -6,7 +6,8 @@ import IconWarning from './IconWarning'
 import { supportContact } from '../../config.json'
 
 const Error = styled.div`
-  ${({ fill }) => (fill ? 'width: 100%;' : null)}
+  width: ${({ fill }) => (fill ? '100%' : 'initial')};
+  height: ${({ fill }) => (fill ? '100%' : 'initial')};
 
   background-color: rgba(255, 255, 255, 0.1);;
   padding: 24px;
@@ -46,7 +47,11 @@ export default ({ error, callerDescription }) => (
       <IconWarning width="56px" />
       <ErrorTitle>There was a problem loading { callerDescription }</ErrorTitle>
     </ErrorHeader>
-    <ErrorMessage>{ generateHumanReadableError(error) }</ErrorMessage>
+    {
+      callerDescription
+        ? <ErrorMessage>{ generateHumanReadableError(error) }</ErrorMessage>
+        : null
+    }
     {
       supportContact
         ? <ErrorMessage small>Please report this to { supportContact }.</ErrorMessage>
