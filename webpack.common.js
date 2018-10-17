@@ -3,9 +3,11 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path')
 
+const buildData = require('./.build.json')
+
 const development = process.env.NODE_ENV !== 'production'
 
-const title = 'Boilerplate'
+const title = `Videowall (${development ? 'development build' : `build ${buildData.id}`})`
 
 module.exports = {
   module: {
