@@ -1,6 +1,8 @@
-import { PureComponent } from 'react'
+import React, { PureComponent } from 'react'
 import propTypes from 'prop-types'
 import axios from 'axios'
+
+import Error from './Error'
 
 import { api } from '../../config.json'
 
@@ -10,6 +12,8 @@ class FeedContainer extends PureComponent {
 
     this.state = {
       items: [],
+      hasError: false,
+      error: null,
     }
   }
 
@@ -29,11 +33,23 @@ class FeedContainer extends PureComponent {
 
     axios.get(`${api}/${endpoint}`)
       .then(response => this.setState({ items: response.data }))
-      .catch(error => console.error(error))
+      .catch(error => this.setState({
+        hasError: true,
+        error,
+      }))
   }
 
   render() {
-    const { items } = this.state
+    const { items, error, hasError } = this.state
+
+    if (hasError) {
+      return (
+        <Error
+          error={error}
+          callerDescription={`the data from ${this.props.endpoint}`}
+        />
+      )
+    }
 
     return this.props.render({ items, ...this.props })
   }

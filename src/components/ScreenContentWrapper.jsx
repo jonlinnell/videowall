@@ -6,7 +6,7 @@ const ScreenContentWrapper = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: start;
-  height: 100%;
+  height: 1080px;
 `
 
 export default ScreenContentWrapper

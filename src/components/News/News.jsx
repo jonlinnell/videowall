@@ -9,8 +9,6 @@ import MoreInfo from '../MoreInfo'
 
 const ItemsContainer = styled.div`
   position: absolute;
-  display: flex;
-  flex-direction: column;
   top: 120px;
 
   & > div {

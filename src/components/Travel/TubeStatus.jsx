@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import Attribution from './Attribution'
 
 import TubeLineInfo from './TubeLineInfo'
+import Error from '../Error'
 
 import { api } from '../../../config.json'
 
@@ -36,8 +37,8 @@ class TubeStatus extends PureComponent {
 
     this.state = {
       data: [],
-      loading: false,
       error: null,
+      hasError: false,
     }
   }
 
@@ -55,11 +56,22 @@ class TubeStatus extends PureComponent {
   fetchData = () => {
     axios.get(`${api}/tube`)
       .then(response => this.setState({ data: response.data }))
-      .catch(error => this.setState({ error }))
+      .catch(error => this.setState({
+        hasError: true,
+        error,
+      }))
   }
 
   render() {
-    const { data, error, loading } = this.state
+    const {
+      data,
+      hasError,
+      error,
+    } = this.state
+
+    if (hasError) {
+      return <Error error={error} callerDescription="the tube status" />
+    }
 
     return (
       <TubeStatusWrapper>
@@ -68,25 +80,9 @@ class TubeStatus extends PureComponent {
             data.map(line => <TubeLineInfo line={line} key={line.id} />)
           }
         </LineWrapper>
-        <div className="board-footer">
-          <Attribution>
-            Powered by TfL Open Data. Visit tfl.gov.uk for more information.
-          </Attribution>
-          {
-            loading
-            ? <div className="spinner" />
-            : null
-          }
-        </div>
-        {
-          error
-          ? (
-            <div className="error">
-              <p>{ error }</p>
-            </div>
-          )
-          : null
-        }
+        <Attribution>
+          Powered by TfL Open Data. Visit tfl.gov.uk for more information.
+        </Attribution>
       </TubeStatusWrapper>
     )
   }
