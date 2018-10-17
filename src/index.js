@@ -10,13 +10,13 @@ import theme from './theme.json'
 
 /* eslint-disable-next-line no-unused-expressions */
 injectGlobal`
-  *, *:after, *:before {
-    box-sizing: inherit;
-  }
-
   html {
     font-size: 12px;
     box-sizing: border-box;
+  }
+
+  *, *:after, *:before {
+    box-sizing: inherit;
   }
 
   body {
@@ -25,13 +25,8 @@ injectGlobal`
 
     height: 3240px;
     width: 7680px;
-    overflow: hidden;
-  }
 
-  .parallaxContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    overflow: hidden;
   }
 
   ${injectFonts()}

@@ -27,6 +27,8 @@ const Screen1080 = styled.div`
   margin: 24px;
 
   overflow: hidden;
+
+  position: relative;
 `
 
 const ViewMainBGWrapper = styled.div`
