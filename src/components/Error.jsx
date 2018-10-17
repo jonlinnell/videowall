@@ -1,23 +1,34 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import IconWarning from './IconWarning'
+
+import { supportContact } from '../../config.json'
+
 const Error = styled.div`
   ${({ fill }) => (fill ? 'width: 100%;' : null)}
 
-  background-color: rgba(255, 255, 255, 0.1);
-
+  background-color: rgba(255, 255, 255, 0.1);;
   padding: 24px;
+`
+
+const ErrorHeader = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
 `
 
 const ErrorTitle = styled.h4`
   font-family: 'DIN Light';
   font-size: 24px;
   color: white;
+  margin-left: 12px;
 `
 
 const ErrorMessage = styled.p`
   font-family: 'DIN Light';
-  font-size: 18px;
+  font-size: ${({ small }) => (small ? '12px' : '18px')};
   color: white;
 `
 
@@ -31,7 +42,15 @@ const generateHumanReadableError = (error) => {
 
 export default ({ error, callerDescription }) => (
   <Error>
-    <ErrorTitle>There was a problem loading { callerDescription }</ErrorTitle>
+    <ErrorHeader>
+      <IconWarning width="56px" />
+      <ErrorTitle>There was a problem loading { callerDescription }</ErrorTitle>
+    </ErrorHeader>
     <ErrorMessage>{ generateHumanReadableError(error) }</ErrorMessage>
+    {
+      supportContact
+        ? <ErrorMessage small>Please report this to { supportContact }.</ErrorMessage>
+        : null
+    }
   </Error>
 )

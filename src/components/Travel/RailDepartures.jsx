@@ -3,6 +3,7 @@ import axios from 'axios'
 import styled from 'styled-components'
 
 import TrainInfo from './TrainInfo'
+import Error from '../Error'
 
 import { api } from '../../../config.json'
 
@@ -94,6 +95,15 @@ class RailDepartures extends PureComponent {
       stroke: white;
     `
 
+    if (error) {
+      return (
+        <Error
+          error={error}
+          callerDescription="train departures info"
+        />
+      )
+    }
+
     return (
       <RailDeparturesWrapper>
         <Header>
@@ -108,10 +118,8 @@ class RailDepartures extends PureComponent {
           }
         </Header>
         {
-          error
-            ? <pre>{ JSON.stringify(error, null, 2) }</pre>
-            : data.trainServices.slice(0, limit).map(train =>
-              <TrainInfo key={train.serviceId} {...train} />)
+          data.trainServices.slice(0, limit).map(train =>
+            <TrainInfo key={train.serviceId} {...train} />)
         }
       </RailDeparturesWrapper>
     )

@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 import BusInfo from './BusInfo'
 import IconRoundel from './IconRoundel'
+import Error from '../Error'
 
 import { api } from '../../../config.json'
 
@@ -95,6 +96,15 @@ class BusDepartures extends PureComponent {
   render() {
     const { data: { stopName, buses }, error } = this.state
 
+    if (error) {
+      return (
+        <Error
+          error={error}
+          callerDescription="bus info"
+        />
+      )
+    }
+
     return (
       <BusDeparturesWrapper>
         <Header>
@@ -102,9 +112,7 @@ class BusDepartures extends PureComponent {
           <WhiteRoundel width={32} />
         </Header>
         {
-          error
-            ? <pre>{ JSON.stringify(error, null, 2) }</pre>
-            : buses.map(bus => <BusInfo key={bus.journeyId} {...bus} />)
+          buses.map(bus => <BusInfo key={bus.journeyId} {...bus} />)
         }
       </BusDeparturesWrapper>
     )
