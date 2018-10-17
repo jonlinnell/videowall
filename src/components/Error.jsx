@@ -34,7 +34,7 @@ const ErrorMessage = styled.p`
 
 const generateHumanReadableError = (error) => {
   if (!error.status) {
-    return ('It looks like there\'s something wrong with the internet connection.')
+    return ('It\'s not possible to connect to the server at the moment.')
   }
 
   return ('That\'s about all we know.')
