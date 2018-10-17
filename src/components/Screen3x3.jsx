@@ -7,6 +7,8 @@ import Error from './Error'
 
 import { api } from '../../config.json'
 
+const INTERVAL = 1 // in minutes
+
 const Screen3x3Wrapper = styled.div`
   position: absolute;
   top: 0;
@@ -32,7 +34,7 @@ export default class Screen3x3 extends Component {
 
   componentWillMount() {
     this.fetchData()
-    this.intervalId = setInterval(() => this.fetchData(), 10000)
+    this.intervalId = setInterval(() => this.fetchData(), INTERVAL * 60000)
   }
 
   fetchData() {
