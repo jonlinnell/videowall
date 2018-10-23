@@ -16,12 +16,12 @@ const BusInfoContainer = styled.div`
 const Service = styled.div`
   font-family: "DIN Medium";
 
-  padding: 12px 24px;
+  padding: 12px 0;
 
   width: 64px;
 
   font-size: 22px;
-  text-align: right;
+  text-align: center;
 
   color: white;
   background-color: ${({ theme }) => theme.colours.bus};
