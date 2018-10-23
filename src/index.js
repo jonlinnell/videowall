@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { injectGlobal, ThemeProvider } from 'styled-components'
 
-import ViewMain from './components/ViewMain'
+import ViewVideowall from './components/ViewVideowall'
 
 import injectFonts from './fonts/importFontsMessy'
 
@@ -22,6 +22,8 @@ injectGlobal`
   body {
     margin: 0;
     padding: 0;
+
+    overflow: hidden;
   }
 
   ${injectFonts()}
@@ -29,7 +31,7 @@ injectGlobal`
 
 const App = () => (
   <ThemeProvider theme={theme}>
-    <ViewMain />
+    <ViewVideowall />
   </ThemeProvider>
 )
 

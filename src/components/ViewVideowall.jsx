@@ -24,6 +24,8 @@ const ViewMainBGWrapper = styled.div`
   height: 3240px;
   width: 7680px;
   background: url(${bg});
+
+  overflow: hidden;
 `
 
 const ViewMain = () => (

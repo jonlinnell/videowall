@@ -6,59 +6,18 @@ import BusInfo from './BusInfo'
 import IconRoundel from './IconRoundel'
 import Error from '../Error'
 
+import TravelBoxHeader from './TravelBoxHeader'
+
 import { api } from '../../../config.json'
 
 const INTERVAL = 0.5 // in minutes
 
-const WhiteRoundel = styled(IconRoundel)`
-  fill: white;
-  margin-left: auto;
-`
-
 const BusDeparturesWrapper = styled.div`
   width: 100%;
-  
-  & > div {
-    :first-child {
-      border-top-left-radius: ${({ theme }) => theme.radius};
-      border-top-right-radius: ${({ theme }) => theme.radius};
-
-      & > :first-child {
-        border-top-left-radius: ${({ theme }) => theme.radius};
-      }
-    }
-
-    :last-child {
-      border-bottom-left-radius: ${({ theme }) => theme.radius};
-      border-bottom-right-radius: ${({ theme }) => theme.radius};
-      
-      & > :first-child {
-        border-bottom-left-radius: ${({ theme }) => theme.radius};
-      }
-    }
-  }
-`
-
-const Header = styled.div`
-  border-top-left-radius: ${({ theme }) => theme.radius};
-  border-top-right-radius: ${({ theme }) => theme.radius};
 
   background-color: ${({ theme }) => theme.colours.bus};
-  color: white;
-
-  padding: 24px;
-
-  display: flex;
-  flex-direction: row;
-  align-content: start;
-  align-items: center;
-`
-
-const Title = styled.h4`
-  font-family: 'DIN Light';
-  font-size: 28px;
-
-  margin: 0;
+  
+  border-radius: ${({ theme: { radius } }) => radius};
 `
 
 class BusDepartures extends PureComponent {
@@ -115,10 +74,10 @@ class BusDepartures extends PureComponent {
 
     return (
       <BusDeparturesWrapper>
-        <Header>
-          <Title>{ stopName }</Title>
-          <WhiteRoundel width={32} />
-        </Header>
+        <TravelBoxHeader
+          title={stopName}
+          icon={IconRoundel}
+        />
         {
           buses.map(bus => <BusInfo key={bus.journeyId} {...bus} />)
         }

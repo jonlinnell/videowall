@@ -16,17 +16,23 @@ const TravelGridContainer = styled.div`
   display: grid;
   grid: auto-flow / 1fr 1fr 1fr 1fr;
 
-  height: ${({ theme }) => 1080 - (theme.screenPadding * 2)}px;
+  height: ${({ theme: { screenPadding } }) => 1080 - (screenPadding * 2)}px;
   overflow: hidden;
 `
+
 const Column = styled.div`
   display: flex;
   padding: ${({ theme: { columnPadding } }) => `${columnPadding.y}px ${columnPadding.x}px`}; 
   flex-direction: column;
   align-items: start;
 
-  height: ${({ theme }) => 1080 - (theme.screenPadding * 2)}px;
+  height: ${({ theme: { screenPadding } }) => 1080 - (screenPadding * 2)}px;
   overflow: hidden;
+
+  & > div {
+    margin-bottom: ${({ theme: { boxMargin } }) => boxMargin};
+    -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+  }
 `
 
 const TravelFooter = styled.div`
@@ -41,7 +47,7 @@ const AdditionalInformation = styled.div`
   color: white;
   font-size: 24px;
   font-family: 'DIN Light';
-  padding: ${({ theme }) => theme.boxPadding} 0;
+  padding: ${({ theme: { boxPadding } }) => boxPadding} 0;
 `
 
 const ScreenTravel = () => (
@@ -52,9 +58,8 @@ const ScreenTravel = () => (
     <Column>
       <RailDepartures
         station="HKW"
-        limit={9}
+        limit={8}
         icon={IconRoundel}
-        iconWidth={32}
       />
     </Column>
     <Column>
@@ -63,14 +68,12 @@ const ScreenTravel = () => (
         destination="STP"
         limit={3}
         icon={IconNationalRail}
-        iconWidth={32}
       />
       <RailDepartures
         station="STP"
         destination="LBO"
         limit={2}
         icon={IconNationalRail}
-        iconWidth={32}
       />
     </Column>
     <Column>
