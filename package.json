@@ -5,7 +5,7 @@
   "main": "index.js",
   "author": "Jon Linnell <linnell.jon@gmail.com>",
   "scripts": {
-    "build": "node ./utils/incrementBuildId.js && webpack --mode production --progress --config webpack.prod.js",
+    "build": "node ./utils/incrementBuildId.js && NODE_ENV=production webpack --progress --config webpack.prod.js",
     "lint": "eslint ./src --ext .jsx --ext .js",
     "precommit": "yarn lint",
     "start": "webpack-dev-server --mode development --progress --open --hot --config webpack.dev.js"
