@@ -2,6 +2,11 @@
   "radius": "6px",
   "boxPadding": "6px",
   "boxMargin": "24px",
+  "screenPadding": 32,
+  "columnPadding": {
+    "x": 12,
+    "y": 0
+  },
   "colours": {
     "bus": "rgb(220,36,31)"
   },

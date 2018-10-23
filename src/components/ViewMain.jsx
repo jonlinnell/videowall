@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import Events from './Events/Events'
 import ScreenTravel from './Travel/ScreenTravel'
 import Screen3x3 from './Screen3x3'
+import Screen1080 from './Screen1080'
 
 import FeedContainer from './FeedContainer'
 
@@ -17,17 +18,6 @@ const RightScreensWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-`
-
-const Screen1080 = styled.div`
-  height: 1032px;
-  width: 1872px;
-
-  margin: 24px;
-
-  overflow: hidden;
-
-  position: relative;
 `
 
 const ViewMainBGWrapper = styled.div`

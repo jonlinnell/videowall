@@ -12,17 +12,21 @@ import { travel } from '../../../config.json'
 
 const { busStopCodes } = travel
 
-const Container = styled.div`
+const TravelGridContainer = styled.div`
   display: grid;
   grid: auto-flow / 1fr 1fr 1fr 1fr;
-  height: 1032px;
+
+  height: ${({ theme }) => 1080 - (theme.screenPadding * 2)}px;
   overflow: hidden;
 `
 const Column = styled.div`
   display: flex;
-  margin: 0 24px; 
+  padding: ${({ theme: { columnPadding } }) => `${columnPadding.y}px ${columnPadding.x}px`}; 
   flex-direction: column;
   align-items: start;
+
+  height: ${({ theme }) => 1080 - (theme.screenPadding * 2)}px;
+  overflow: hidden;
 `
 
 const TravelFooter = styled.div`
@@ -41,14 +45,14 @@ const AdditionalInformation = styled.div`
 `
 
 const ScreenTravel = () => (
-  <Container>
+  <TravelGridContainer>
     <Column>
       <TubeStatus />
     </Column>
     <Column>
       <RailDepartures
         station="HKW"
-        limit={8}
+        limit={9}
         icon={IconRoundel}
         iconWidth={32}
       />
@@ -80,7 +84,7 @@ const ScreenTravel = () => (
         <Clock />
       </TravelFooter>
     </Column>
-  </Container>
+  </TravelGridContainer>
 )
 
 export default ScreenTravel

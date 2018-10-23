@@ -22,11 +22,6 @@ injectGlobal`
   body {
     margin: 0;
     padding: 0;
-
-    height: 3240px;
-    width: 7680px;
-
-    overflow: hidden;
   }
 
   ${injectFonts()}
