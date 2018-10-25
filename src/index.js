@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { injectGlobal, ThemeProvider } from 'styled-components'
 
-import ViewVideowall from './components/ViewVideowall'
+import Videowall from './routes/Videowall'
 
 import injectFonts from './fonts/importFontsMessy'
 
@@ -31,7 +31,7 @@ injectGlobal`
 
 const App = () => (
   <ThemeProvider theme={theme}>
-    <ViewVideowall />
+    <Videowall />
   </ThemeProvider>
 )
 
