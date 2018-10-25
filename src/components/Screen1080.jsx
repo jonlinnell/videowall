@@ -7,8 +7,6 @@ const Screen1080 = styled.div`
   padding: ${({ noPadding, theme }) => (noPadding ? '0' : `${theme.screenPadding}px`)};
 
   overflow: hidden;
-
-  position: relative;
 `
 
 export default Screen1080
