@@ -1,4 +1,4 @@
-const webpack = require('webpack')
+/* eslint-disable import/no-extraneous-dependencies */
 const merge = require('webpack-merge')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
@@ -23,9 +23,9 @@ module.exports = merge(common, {
         sourceMap: true,
         uglifyOptions: {
           compress: {
-            inline: false
-          }
-        }
+            inline: false,
+          },
+        },
       }),
       new OptimizeCSSAssetsPlugin({}),
     ],
@@ -37,15 +37,15 @@ module.exports = merge(common, {
           name: 'styles',
           test: /\.css$/,
           chunks: 'all',
-          enforce: true
+          enforce: true,
         },
         commons: {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendor_app',
           chunks: 'all',
-          minChunks: 2
-        }
-      }
-    }
+          minChunks: 2,
+        },
+      },
+    },
   },
 })

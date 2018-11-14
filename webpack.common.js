@@ -1,7 +1,7 @@
+/* eslint-disable import/no-extraneous-dependencies */
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+// const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const path = require('path')
 
 const buildData = require('./.build.json')
 
@@ -16,50 +16,50 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader'
-        }
+          loader: 'babel-loader',
+        },
       },
       {
         test: /\.css$/,
         include: [
-          'src'
+          'src',
         ],
         use: [
           MiniCssExtractPlugin.loader,
-          'css-loader'
-        ]
+          'css-loader',
+        ],
       },
       {
         test: /\.(png|jpg)$/,
         use: {
           loader: 'file-loader',
           options: {
-            name: 'images/[hash].[ext]'
-          }
-        }
+            name: 'images/[hash].[ext]',
+          },
+        },
       },
       {
         test: /\.(woff|woff2|eot|ttf)$/,
         use: {
           loader: 'file-loader',
           options: {
-            name: 'fonts/[name].[ext]'
-          }
-        }
+            name: 'fonts/[name].[ext]',
+          },
+        },
       },
-    ]
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/template.html',
       filename: './index.html',
-      title
+      title,
     }),
     // new BundleAnalyzerPlugin(),
     new MiniCssExtractPlugin({
       filename: development ? '[name].css' : '[name].[hash].css',
       chunkFilename: development ? '[id].css' : '[id].[hash].css',
-    })
+    }),
   ],
   resolve: {
     extensions: ['.js', '.jsx'],
