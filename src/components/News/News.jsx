@@ -29,11 +29,17 @@ const News = ({
     </Parallax.Layer>
     <ItemsContainer>
       {
-        items.slice(0, 7).map((item, index) => (
-          <Parallax.Layer offset={offset} speed={(0.3 + (index / 20))}>
-            {renderItem({ key: generateKey(item), offset, item })}
-          </Parallax.Layer>
-        ))
+        items.slice(0, 7).map((item, index) => {
+          const key = generateKey(item)
+
+          return (
+            <Parallax.Layer key={key} offset={offset} speed={(0.3 + (index / 20))}>
+              {
+                renderItem({ key, offset, item })
+              }
+            </Parallax.Layer>
+          )
+        })
       }
       <MoreInfo>{moreInfo}</MoreInfo>
     </ItemsContainer>
