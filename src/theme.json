@@ -8,7 +8,9 @@
     "y": 0
   },
   "colours": {
-    "bus": "rgb(220,36,31)"
+    "bus": "rgb(220,36,31)",
+    "mulberry": "rgb(183, 0, 98)",
+    "sunset": "rgb(35, 19, 68)"
   },
   "lines": {
     "bakerloo": {
