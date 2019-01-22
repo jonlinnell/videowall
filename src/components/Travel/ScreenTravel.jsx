@@ -81,7 +81,7 @@ const ScreenTravel = () => (
       <TravelFooter>
         <AdditionalInformation>
           Take this with you when you go. Visit
-          <WebLink> lboro.london/travel </WebLink>
+          <WebLink> travel.lboro.london </WebLink>
           on your smartphone or tablet.
         </AdditionalInformation>
         <Clock />
