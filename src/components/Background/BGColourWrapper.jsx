@@ -8,10 +8,14 @@ import { coords } from '../../../config.json'
 const { latitude, longitude, timezone } = coords
 
 class BGColourWrapper extends PureComponent {
-  state = {
-    night: false,
-    sunset: null,
-    sunrise: null,
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      night: false,
+      sunset: null,
+      sunrise: null,
+    }
   }
 
   componentDidMount() {
@@ -20,7 +24,6 @@ class BGColourWrapper extends PureComponent {
       this.fetchSunsetTimes()
     }, 6 * 1000 * 60 * 60) // 6 hours
 
-    this.isItNight()
     this.nightCheckInterval = setInterval(() => {
       this.isItNight()
     }, 5 * 1000 * 60) // 5 minutes
@@ -36,11 +39,13 @@ class BGColourWrapper extends PureComponent {
   fetchSunsetTimes = () => {
     axios
       .get(`https://api.sunrise-sunset.org/json?lat=${latitude}&lng=${longitude}&formatted=0`)
-      .then(({ data: { results: { sunset, sunrise } } }) => {
+      .then(({ data: { results } }) => {
+        const { sunset, sunrise } = results
+
         this.setState({
           sunset: moment(sunset, timezone),
           sunrise: moment(sunrise, timezone),
-        })
+        }, () => this.isItNight())
       })
   }
 
@@ -48,11 +53,7 @@ class BGColourWrapper extends PureComponent {
     const { sunset, sunrise } = this.state
     const now = moment().tz(timezone)
 
-    if ((now.isAfter(sunset)) || (now.isBefore(sunrise))) {
-      return true
-    }
-
-    return false
+    this.setState({ night: ((now.isAfter(sunset)) || (now.isBefore(sunrise))) })
   }
 
   render() {
