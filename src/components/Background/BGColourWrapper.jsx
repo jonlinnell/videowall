@@ -27,7 +27,7 @@ const BGColour = styled.div`
     (nightMode ? colours.sunset : colours.mulberry)};
     mix-blend-mode: screen;
 
-    transition: background-color ease-in 3s;
+    transition: background-color ease-in 30s;
   }
 `
 
