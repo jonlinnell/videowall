@@ -9,7 +9,7 @@ import { api } from '../../config.json'
 
 const INTERVAL = 1 // in minutes
 
-const Screen3x3Wrapper = styled.div`
+const VideowallMainContentWrapper = styled.div`
   position: absolute;
   top: 0;
   left: 0;
@@ -63,9 +63,9 @@ export default class Screen3x3 extends Component {
 
     if (hasError) {
       return (
-        <Screen3x3Wrapper>
+        <VideowallMainContentWrapper>
           <Error fill error={error} />
-        </Screen3x3Wrapper>
+        </VideowallMainContentWrapper>
       )
     }
 
@@ -87,9 +87,9 @@ export default class Screen3x3 extends Component {
     }
 
     return (
-      <Screen3x3Wrapper>
+      <VideowallMainContentWrapper>
         {items}
-      </Screen3x3Wrapper>
+      </VideowallMainContentWrapper>
     )
   }
 }

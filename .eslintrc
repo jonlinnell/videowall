@@ -5,7 +5,8 @@
     "react/jsx-filename-extension": 0,
     "react/prop-types": "off",
     "semi": [2, "never"],
-    "comma-dangle": ["error", "always-multiline"]
+    "comma-dangle": ["error", "always-multiline"],
+    "no-mixed-operators": "off"
   },
   "parserOptions": {
     "ecmaFeatures": {

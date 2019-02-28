@@ -7,7 +7,7 @@ import Videowall from './routes/Videowall'
 
 import GlobalStyle from './style/GlobalStyle'
 
-import theme from './theme.json'
+import theme from './style/theme.json'
 
 const App = () => (
   <ThemeProvider theme={theme}>

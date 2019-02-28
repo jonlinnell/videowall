@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Screen1080 = styled.div`
+const Screen = styled.div`
   height: ${({ portrait }) => (portrait ? 1920 : 1080)}px;
   width: ${({ portrait }) => (portrait ? 1080 : 1920)}px;
 
@@ -9,4 +9,4 @@ const Screen1080 = styled.div`
   overflow: hidden;
 `
 
-export default Screen1080
+export default Screen
