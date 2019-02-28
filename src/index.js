@@ -1,37 +1,19 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { injectGlobal, ThemeProvider } from 'styled-components'
+import { ThemeProvider } from 'styled-components'
 
 import Videowall from './routes/Videowall'
 
-import injectFonts from './fonts/importFontsMessy'
+import GlobalStyle from './style/GlobalStyle'
 
 import theme from './theme.json'
 
-/* eslint-disable-next-line no-unused-expressions */
-injectGlobal`
-  html {
-    font-size: 12px;
-    box-sizing: border-box;
-  }
-
-  *, *:after, *:before {
-    box-sizing: inherit;
-  }
-
-  body {
-    margin: 0;
-    padding: 0;
-
-    overflow: hidden;
-  }
-
-  ${injectFonts()}
-`
-
 const App = () => (
   <ThemeProvider theme={theme}>
-    <Videowall />
+    <React.Fragment>
+      <GlobalStyle />
+      <Videowall />
+    </React.Fragment>
   </ThemeProvider>
 )
 
