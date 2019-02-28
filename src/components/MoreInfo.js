@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 
 const MoreInfo = styled.p`
@@ -10,8 +9,4 @@ const MoreInfo = styled.p`
   margin-top: auto;
 `
 
-export default ({ children }) => (
-  <MoreInfo>
-    { children }
-  </MoreInfo>
-)
+export default MoreInfo
