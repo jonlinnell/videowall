@@ -25,7 +25,7 @@ const NewsScreen = () => {
   ]
 
   const [feedData, setFeedData] = useState([])
-  const [currentFeed, setCurrentFeed] = useState(0)
+  const [currentFeed] = useState(0)
 
   const fetchFeed = async () => {
     const response = await axios.get(feeds[0].url)
