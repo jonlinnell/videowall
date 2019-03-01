@@ -3,7 +3,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { ThemeProvider } from 'styled-components'
 
-import Videowall from './routes/Videowall'
+import Videowall from './views/Videowall'
 
 import GlobalStyle from './style/GlobalStyle'
 

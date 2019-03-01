@@ -1,12 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import TravelScreen from '../components/Travel/TravelScreen'
-import EventsScreen from '../components/Events/EventsScreen'
 import VideowallMain from '../components/VideowallMain'
-import Screen from '../components/Screen'
-
-import Background from '../components/Background'
+import Background from '../components/VideowallBackground'
+import TravelScreen from '../components/VideowallTotemTravel/TravelScreen'
+import EventsScreen from '../components/VideowallTotemEvents/EventsScreen'
+import NewsScreen from '../components/VideowallTotemNews/NewsScreen'
 
 const VideowallTotem = styled.div`
   position: absolute;
@@ -21,7 +20,7 @@ const Videowall = () => (
   <Background>
     <VideowallMain />
     <VideowallTotem>
-      <Screen />
+      <NewsScreen />
       <EventsScreen />
       <TravelScreen />
     </VideowallTotem>
