@@ -10,7 +10,8 @@
   "colours": {
     "bus": "rgb(220,36,31)",
     "mulberry": "rgb(183, 0, 98)",
-    "sunset": "rgb(68, 8, 40)"
+    "africanViolet": "rgb(54, 17, 99)",
+    "sunset": "rgb(2, 4, 8)"
   },
   "lines": {
     "bakerloo": {
