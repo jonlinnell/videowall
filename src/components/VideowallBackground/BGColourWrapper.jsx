@@ -8,8 +8,8 @@ import { coords } from '../../../config.json'
 const { latitude, longitude, timezone } = coords
 
 const BGColour = styled.div`
-  height: 3240px;
-  width: 7680px;
+  height: ${({ height }) => height || 3240}px;
+  width: ${({ height }) => height || 7680}px;
 
   position: relative;
 
@@ -23,15 +23,14 @@ const BGColour = styled.div`
     top: 0;
 
     z-index: 1;
-    background-color: ${({ theme: { colours }, nightMode }) =>
-    (nightMode ? colours.sunset : colours.mulberry)};
+    background-color: ${({ theme: { colours }, nightMode, colour }) => (nightMode ? colours.sunset : colours[colour])};
     mix-blend-mode: screen;
 
     transition: background-color ease-in 30s;
   }
 `
 
-const BGColourWrapper = ({ children }) => {
+const BGColourWrapper = ({ children, colour }) => {
   const [cycleData, setCycleData] = useState()
   const [now, setNow] = useState(moment().tz(timezone))
 
@@ -79,6 +78,7 @@ const BGColourWrapper = ({ children }) => {
 
   return (
     <BGColour
+      colour={colour}
       nightMode={
         cycleData
           ? now.isBefore(moment(cycleData.sunrise)) || now.isAfter(moment(cycleData.sunset))

@@ -6,7 +6,8 @@ const BGPatternWrapper = styled.div`
   height: 100%;
   width: 100%;
 
-  background-image: url(${bg});
+  background-image: ${({ hidePattern }) => (hidePattern ? 'none' : `url(${bg})`)};
+  background-size: cover;
 
   overflow: hidden;
 `
